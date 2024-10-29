@@ -1,0 +1,88 @@
+nav {
+    background-color: #242038;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    height: 6vw;
+    border-bottom: #118FD2 3px solid;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img {
+    width: 5vw;
+}
+
+.logo h1 {
+    color: #118FD2;
+    font-family: "Lexend Giga", sans-serif; 
+    font-size: 2vw;
+    font-weight: 300;
+}
+
+.links ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 12vw;
+}
+
+.links ul li{
+    color: white;
+    font-family: "Lexend Giga", sans-serif; 
+    font-size: 0.9vw;
+}
+
+.links ul li:hover {
+    color: #118FD2;
+    cursor: pointer;
+}
+
+.mesas h2 {
+    font-size: ;
+    color: white;
+}
+
+.login-cadastro {
+    display: flex;
+    gap: 1vw;
+}
+
+.login-cadastro button {
+    font-family: "Inter", sans-serif;
+    font-size: 1vw;
+}
+
+#entrar  {
+    border: none;
+    background-color: transparent;
+    color: white;   
+}
+
+#entrar:hover  {
+    color:#118FD2;   
+    cursor: pointer;
+}
+
+#cadastro {
+    border-radius: 1vw;
+    padding: 1vw;
+    border: none;
+}
+
+#cadastro:hover {
+    background-color: #118FD2;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width:800px) {
+    
+}

@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lexend Giga", sans-serif;
+}
+
+h1 {
+    font-size: 1.5vw;
+}
+
+h2 {
+    font-size: 1vw;
+}
+
+h3 {
+    font-weight: 300;
+    font-size: 1vw;
+}
+
+h4 {
+    font-size: 0.7vw;
+}
+
+h5 {
+    font-size: 0.7vw;
+}
+
+button {
+    font-size: 0.7vw;
+}
+
+label {
+    font-size: 1vw;
+}

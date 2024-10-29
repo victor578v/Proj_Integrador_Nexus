@@ -1,0 +1,106 @@
+.biblioteca {
+    background-color: #242038;
+    padding: 0.6vw;
+    height: 100%;
+    width: 100%;
+}
+
+.biblioteca-interior {
+    background-color: #d9d9d9;
+    border: none;
+    border-radius: 0.5vw;
+    padding: 0.6vw;
+    height: 20vw;
+}
+
+.pesquisa {
+    display: flex;
+    width: 100%;
+    height: 1vw;
+    justify-content: space-between;
+    gap: 0.5vw;
+    height: 1.4vw;
+    margin-bottom: 0.8vw;
+}
+
+.pesquisa form {
+    background-color: grey;
+    border: none;
+    width: 100%;
+    display: flex;
+    border-radius: 1vw;
+    height: 1.4vw;
+}
+
+.pesquisa form img {
+    width: 1vw;
+    margin-left: 0.4vw;
+    margin-right: 0.4vw;
+}
+
+.pesquisa form input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: grey;
+    color: #d9d9d9;
+    border-top-right-radius: 1vw;
+    border-bottom-right-radius: 1vw;
+   padding-left: 0.5vw;
+    display: flex;
+    justify-content: center;
+}
+
+.pesquisa form input:focus {
+    background-color: grey;
+}
+
+.pesquisa form input::placeholder {
+    color: #d9d9d9;
+    font-size: 0.55vw;
+}
+
+.pesquisa button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.4vw;
+    height: 1.4vw;
+    border: none;
+    border-radius: 0.2vw;
+    background-color: #118FD2;
+    color: #d9d9d9;
+    font-size: 1.2vw;
+}
+
+.pesquisa button:hover {
+    cursor: pointer;
+}
+
+.arquivo {
+    display: flex;
+    gap: 0.5vw;
+    align-items: center;
+    justify-content: baseline;
+}
+
+.arquivo:hover {
+    cursor: pointer;
+    color: #118FD2;
+}
+
+.arquivo img {
+    width: 1vw;
+}
+
+
+.arquivo h3 {
+    font-size: 0.8vw;
+    font-weight: 400;
+}
+
+.arquivos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw  ;
+}

@@ -1,0 +1,43 @@
+footer {
+    background-color: #242038;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    border-top: 3px solid #118FD2;
+}
+
+.links-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
+}
+
+.links-footer ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    width: 55vw;
+}
+
+.links-footer ul li {
+    width: 18vw;
+    color: #D9D9D9;
+    font-family: "Lexend Giga", sans-serif; 
+}
+
+.footer-titulos li {
+    font-size: 1.8vw;
+}
+
+.footer-links li {
+    font-size: 1vw;
+}
+
+.footer-links li:hover {
+    color: #118FD2;
+    cursor: pointer;
+}

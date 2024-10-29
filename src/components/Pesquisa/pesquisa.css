@@ -1,0 +1,66 @@
+.pesquisa {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 3vw;
+    width: 50vw;
+}
+
+.filtros {
+    background-color: #242038;
+    border: 1px black solid;
+    border-right: none;
+    border-top-left-radius: 0.8vw;
+    border-bottom-left-radius: 0.8vw;
+    width: 10%;
+    height: 4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.filtros img {
+    filter: invert(99%) sepia(1%) saturate(4224%) hue-rotate(235deg) brightness(118%) contrast(100%);
+    width: 2vw;
+}
+
+.filtros:hover {
+    cursor: pointer;
+}
+
+.pesquisa-texto {
+    border: 1px black solid;
+    width: 80%;
+    height: 4vw;
+}
+
+.pesquisa-texto input {
+    border: none;
+    outline: none;
+    height: 100%;
+    width: 100%;
+    font-size: 1.2vw;
+    padding-left: 1vw;
+    background-color: #D9D9D9;
+}
+
+.botao {
+    background-color: #118FD2;
+    border: 1px black solid;
+    border-left: none;
+    border-top-right-radius: 0.8vw;
+    border-bottom-right-radius: 0.8vw;
+    width: 10%;
+    height: 4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botao img {
+    width: 1.5vw;
+}
+
+.botao:hover {
+    cursor: pointer;
+}
