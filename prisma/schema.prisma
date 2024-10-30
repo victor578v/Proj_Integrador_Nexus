@@ -1,0 +1,57 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Usuario {
+  id          Int          @id @default(autoincrement())
+  name        String
+  email       String       @unique
+  password    String
+  mesas       Mesa[]
+  personagens Personagem[]
+  Mensagem    Mensagem[]
+
+  @@map("usuarios")
+}
+
+model Mesa {
+  id          Int          @id @default(autoincrement())
+  nome        String
+  sistema     String
+  dono        Usuario      @relation(fields: [userId], references: [id])
+  userId      Int
+  mensagens   Mensagem[]
+  personagens Personagem[]
+
+  @@map("mesas")
+}
+
+model Mensagem {
+  id       Int     @id @default(autoincrement())
+  conteudo String
+  autor    Usuario @relation(fields: [userId], references: [id])
+  userId   Int
+  mesa     Mesa    @relation(fields: [mesaId], references: [id])
+  mesaId   Int
+
+  @@map("mensagens")
+}
+
+model Personagem {
+  id         Int     @id @default(autoincrement())
+  nickname   String  @default("Sem Personagem")
+  vidaMaxima Int     @default(0) // Exemplo de valor padrão
+  vidaAtual  Int     @default(0) // Exemplo de valor padrão
+  usuario    Usuario @relation(fields: [userId], references: [id])
+  userId     Int
+  mesa       Mesa    @relation(fields: [mesaId], references: [id])
+  mesaId     Int
+
+  @@unique([userId, mesaId]) // Garante que o usuário tenha apenas um personagem por mesa
+  @@map("personagens")
+}
