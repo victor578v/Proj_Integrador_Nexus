@@ -1,95 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
 import './chat.css';
+import ItemMensagem from '../ItemMensagem/itemmensagem';
 
 const Chat = () => {
     return (
         <section className="chat">
             <div className="mensagens">
-                <div className="mensagem">
-                    <div className="identificadores">
-                        <h2>Nome Personagem</h2>
-                        <h3>Nome Usuario</h3>
-                    </div>
-                    <h1>Mensagem LOREM IPSUM</h1>
-                </div>
-                <div className="mensagem">
-                    <div className="identificadores">
-                        <h2>Nome Personagem</h2>
-                        <h3>Nome Usuario</h3>
-                    </div>
-                    <h1>Mensagem LOREM IPSUM</h1>
-                </div>
-                <div className="mensagem">
-                    <div className="identificadores">
-                        <h2>Nome Personagem</h2>
-                        <h3>Nome Usuario</h3>
-                    </div>
-                    <h1>Mensagem LOREM IPSUM</h1>
-                </div>
-                <div className="mensagem">
-                    <div className="identificadores">
-                        <h2>Nome Personagem</h2>
-                        <h3>Nome Usuario</h3>
-                    </div>
-                    <h1>Mensagem LOREM IPSUM</h1>
-                </div>
-                <div className="mensagem">
-                    <div className="identificadores">
-                        <h2>Nome Personagem</h2>
-                        <h3>Nome Usuario</h3>
-                    </div>
-                    <h1>Mensagem LOREM IPSUM</h1>
-                </div>
-                <div className="mensagem">
-                    <div className="identificadores">
-                        <h2>Nome Personagem</h2>
-                        <h3>Nome Usuario</h3>
-                    </div>
-                    <h1>Mensagem LOREM IPSUM</h1>
-                </div>
-                <div className="mensagem">
-                    <div className="identificadores">
-                        <h2>Nome Personagem</h2>
-                        <h3>Nome Usuario</h3>
-                    </div>
-                    <h1>Mensagem LOREM IPSUM</h1>
-                </div>
-                <div className="mensagem">
-                    <div className="identificadores">
-                        <h2>Nome Personagem</h2>
-                        <h3>Nome Usuario</h3>
-                    </div>
-                    <h1>Mensagem LOREM IPSUM</h1>
-                </div>
-                <div className="mensagem">
-                    <div className="identificadores">
-                        <h2>Nome Personagem</h2>
-                        <h3>Nome Usuario</h3>
-                    </div>
-                    <h1>Mensagem LOREM IPSUM</h1>
-                </div>
-                <div className="mensagem">
-                    <div className="identificadores">
-                        <h2>Nome Personagem</h2>
-                        <h3>Nome Usuario</h3>
-                    </div>
-                    <h1>Mensagem LOREM IPSUM</h1>
-                </div>
-                <div className="mensagem">
-                    <div className="identificadores">
-                        <h2>Nome Personagem</h2>
-                        <h3>Nome Usuario</h3>
-                    </div>
-                    <h1>Mensagem LOREM IPSUM</h1>
-                </div>
-                <div className="mensagem">
-                    <div className="identificadores">
-                        <h2>Nome Personagem</h2>
-                        <h3>Nome Usuario</h3>
-                    </div>
-                    <h1>Mensagem LOREM IPSUM</h1>
-                </div>
+                <ItemMensagem />
             </div>
 
             <div className="enviar-mensagem">

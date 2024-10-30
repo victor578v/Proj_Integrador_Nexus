@@ -4,7 +4,7 @@ import './sidebar.css';
 
 const Sidebar = ({ children }) => { // Adicione { children } como argumento
     return (
-            <section class="jogadores-biblioteca">
+            <section className="jogadores-biblioteca">
                 {children}
             </section>
     );

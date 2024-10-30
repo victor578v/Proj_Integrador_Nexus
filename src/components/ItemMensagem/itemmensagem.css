@@ -1,0 +1,29 @@
+.mensagem {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 2vw;
+}
+
+.mensagem:last-child {
+    margin-bottom: 0vw;
+}
+
+.mensagem:first-child {
+    margin-bottom: 1vw;
+}
+
+.mensagem h1 {
+    font-size: 1vw;
+    font-weight: 300;
+}
+
+.identificadores {
+    display: flex;
+    border-top: 2px black solid;
+    padding-top: 0.3vw;
+}
+
+.identificadores h2 {
+    padding-right: 2vw;
+}
