@@ -1,0 +1,305 @@
+/*!************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/app/mesa/[id]/page.css ***!
+  \************************************************************************************************************************************************************************************************************************************************************************/
+main {
+    display: flex;
+    background-color: #242038;
+}
+
+
+/*!**************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/components/Biblioteca/biblioteca.css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************/
+.biblioteca {
+    background-color: #242038;
+    padding: 0.6vw;
+    height: 100%;
+    width: 100%;
+}
+
+.biblioteca-interior {
+    background-color: #d9d9d9;
+    border: none;
+    border-radius: 0.5vw;
+    padding: 0.6vw;
+    height: 20vw;
+}
+
+.pesquisa {
+    display: flex;
+    width: 100%;
+    height: 1vw;
+    justify-content: space-between;
+    gap: 0.5vw;
+    height: 1.4vw;
+    margin-bottom: 0.8vw;
+}
+
+.pesquisa form {
+    background-color: grey;
+    border: none;
+    width: 100%;
+    display: flex;
+    border-radius: 1vw;
+    height: 1.4vw;
+}
+
+.pesquisa form img {
+    width: 1vw;
+    margin-left: 0.4vw;
+    margin-right: 0.4vw;
+}
+
+.pesquisa form input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: grey;
+    color: #d9d9d9;
+    border-top-right-radius: 1vw;
+    border-bottom-right-radius: 1vw;
+   padding-left: 0.5vw;
+    display: flex;
+    justify-content: center;
+}
+
+.pesquisa form input:focus {
+    background-color: grey;
+}
+
+.pesquisa form input::placeholder {
+    color: #d9d9d9;
+    font-size: 0.55vw;
+}
+
+.pesquisa button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.4vw;
+    height: 1.4vw;
+    border: none;
+    border-radius: 0.2vw;
+    background-color: #118FD2;
+    color: #d9d9d9;
+    font-size: 1.2vw;
+}
+
+.pesquisa button:hover {
+    cursor: pointer;
+}
+
+.arquivo {
+    display: flex;
+    gap: 0.5vw;
+    align-items: center;
+    justify-content: baseline;
+}
+
+.arquivo:hover {
+    cursor: pointer;
+    color: #118FD2;
+}
+
+.arquivo img {
+    width: 1vw;
+}
+
+
+.arquivo h3 {
+    color: black;
+    font-size: 0.8vw;
+    font-weight: 400;
+}
+
+.arquivo h3:hover {
+    cursor: pointer;
+    color: #118FD2;
+}
+
+.arquivos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw  ;
+}
+/*!**************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/components/Chat/chat.css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************/
+.chat {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding-top: 1vw;
+    justify-content: space-between;
+}
+
+.enviar-mensagem {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1vw;
+    align-items: center; /* Centraliza verticalmente os itens */
+    padding: 1vw; /* Espaço interno */
+    background-color: #f9f9f9; /* Cor de fundo da área de entrada */
+    border-top: 1px solid #ccc; /* Borda superior */
+    border-radius: 5px; /* Arredondar os cantos */
+}
+
+.enviar-mensagem input {
+    width: 100%;
+    padding: 1vw; /* Espaçamento interno do input */
+    border: 1px solid #ccc; /* Borda do input */
+    border-radius: 4px; /* Arredondar os cantos do input */
+    font-size: 1vw; /* Tamanho da fonte do input */
+    outline: none;
+}
+
+.enviar-mensagem input:focus {
+    border: #118FD2 1px solid;
+}
+
+.botoes {   
+    display: flex;
+    gap: 0.3vw;
+    width: 100%;
+    padding: 0.1vw;
+}
+
+.botoes button {
+    background-color: #007bff; /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    border: none; /* Remove a borda padrão do botão */
+    border-radius: 4px; /* Arredondar os cantos do botão */
+    padding: 0.4vw; /* Espaçamento interno do botão */
+    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+    transition: background-color 0.3s; /* Animação na mudança de cor */
+}
+
+.enviar-mensagem button:hover {
+    background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+}
+
+
+.mensagens {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    margin-bottom: 1vw;
+}
+
+.mensagens::-webkit-scrollbar {
+    width: 8px; 
+}
+
+.mensagens::-webkit-scrollbar-thumb {
+    background-color: #0a5177; 
+    border-radius: 4px;
+    height: 1vw;
+}
+
+.mensagens::-webkit-scrollbar-thumb:hover {
+    background-color: #242038; 
+}
+
+.mensagens::-webkit-scrollbar-track {
+    background: #118FD2 ; 
+    border-radius: 4px; 
+}
+
+/*!******************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/components/ItemMensagem/itemmensagem.css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************/
+.mensagem {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 2vw;
+}
+
+.mensagem:last-child {
+    margin-bottom: 0vw;
+}
+
+.mensagem:first-child {
+    margin-bottom: 1vw;
+}
+
+.mensagem h1 {
+    font-size: 1vw;
+    font-weight: 300;
+}
+
+.identificadores {
+    display: flex;
+    border-top: 2px black solid;
+    padding-top: 0.3vw;
+}
+
+.identificadores h2 {
+    padding-right: 2vw;
+}
+/*!************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/components/Jogadores/jogadores.css ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************/
+.jogadores {
+    border-bottom: #118FD2 2px solid;
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    min-height: 30vw;
+    overflow-y: scroll auto;
+}
+/*!****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/components/ItemJogador/itemjogador.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************/
+.jogador {
+    display: flex;
+    align-items: center;
+}
+
+.jogador img {
+    width: 5vw;
+    height: 5vw;
+    border: none;
+    border-radius: 100%;
+    margin-right: 1vw;
+}
+
+.separador-img-conteudo {
+    display: flex;
+    flex-direction: column  ;
+    gap: 0.2vw;
+}
+
+.jogador h1 {
+    color: #d9d9d9;
+    font-size: 0.8vw;
+}
+
+.jogador h2 {
+    color: #d9d9d9;
+    font-size: 0.6vw;
+}
+
+.barrinha {
+    min-width: 13vw;
+    max-width: 13vw;
+    background-color: #118FD2;
+    border: none;
+    border-radius: 40vw;
+    font-size: 1vw;
+    text-align: center;
+}
+/*!********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/components/Sidebar/sidebar.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************/
+.jogadores-biblioteca {
+    background-color: #242038;
+    width: 26%;
+    height: 100%;
+}

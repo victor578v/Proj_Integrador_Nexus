@@ -46,7 +46,6 @@ nav {
 }
 
 .mesas h2 {
-    font-size: ;
     color: white;
 }
 
@@ -81,6 +80,36 @@ nav {
     background-color: #118FD2;
     color: white;
     cursor: pointer;
+}
+
+.link {
+    display: flex;
+    text-decoration: none;
+}
+
+.usuario-logado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+}
+
+.usuario-logado button {
+    border-radius: 1vw;
+    padding: 0.7vw;
+    border: none;
+    font-size: 0.8vw;
+}
+
+.usuario-logado button:hover {
+    background-color: #118FD2;
+    color: white;
+    cursor: pointer;
+}
+
+.usuario-logado h2 {
+    font-size: 1vw;
+    color: #d9d9d9;
 }
 
 @media (max-width:800px) {

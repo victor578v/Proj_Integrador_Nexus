@@ -20,7 +20,10 @@
 }
 
 #div1 img {
-    width: 30%;
+    min-width: 30%;
+    max-width: 30%;
+    min-height: 4vw;
+    max-height: 4vw;
     border: none;
     border-radius: 0.4vw;
 }
@@ -28,7 +31,21 @@
 #div2 {
     display: flex;
     flex-direction: column;
-    gap: 0.5vw;
+    min-width: 65%;
+    max-width: 65%;
+    max-height: 4vw;
+    min-height: 4vw;
+       
+}
+
+#div2 h2 {
+    display: flex;
+    align-items: center;
+    height: 3vw;
+}
+
+#div2 h3 {
+    height: 2vw;
 }
 
 .cards h4 {

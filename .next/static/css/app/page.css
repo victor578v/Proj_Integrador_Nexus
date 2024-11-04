@@ -1,0 +1,371 @@
+/*!**********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/components/CriaMesa/criamesa.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************/
+.criar-mesa {
+    display: flex;
+    justify-content: center;
+    background-color: #D9D9D9;
+    width: 95%;
+    margin: 0 auto;
+    border: none;
+    border-radius: 1vw;
+    padding: 1.4vw;
+}
+
+.criar-mesa form {
+    background-color: #242038;
+    display: flex;
+    width: 60%;
+    padding: 1vw;
+    gap: 0.8vw;
+    border: none;
+    border-radius: 0.42vw;
+}
+
+.imagem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    height: 20vw;
+    gap: 0.2vw;
+}
+
+.imagem img {
+    height: 16vw;
+    border: #118FD2 2px solid;
+    border-radius: 0.4vw;
+}
+
+.imagem h2 {
+    color: white;
+}
+
+.imagem button {
+    color: #242038;
+    background-color: #242038;
+    border: none;
+    height: 2vw;
+    width: 7vw;
+    margin-top: 1vw;
+}
+
+.info-basica {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    gap: 0.8vw;
+}
+
+.componente {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    gap: 0.2vw;
+}
+
+.componente input {
+    width: 16vw;
+    height: 2vw;
+    border: none;
+    border-radius: 0.4vw;
+}
+
+.vagas {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+}
+
+.vagas div {
+    display: flex;
+    gap: 2vw;
+}
+
+.vagas div label {
+    display: flex;
+    align-items: center;
+    gap: 0.1vw;
+}
+
+.vagas div label input[type="radio"] {
+    -moz-appearance: none;
+         appearance: none;
+    -webkit-appearance: none; 
+    width: 1.5vw;
+    height: 1.5vw;
+    border: none;
+    border-radius: 0.4vw;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.vagas div label input[type="radio"]:checked::after {
+    content: '✖';
+    color: #118FD2;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    height: 100%;
+    font-size: 1.5vw;
+}
+
+.info-basica label, h3 {
+    color: white;
+}
+
+.descricao {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    height: 20vw;
+    width: 100%;
+    gap: 0.2vw;
+}
+
+.descricao label {
+    color: white;
+}
+
+.descricao textarea {
+    height: 16vw;
+    width: 100%;
+    border: none;
+    border-radius: 0.4vw;
+}
+
+.descricao button {
+    height: 2vw;
+    width: 100%;
+    border: none;
+    border-radius: 0.2vw;
+    color: white;
+    background-color: #1AB800;
+    margin-top: 1vw;
+}
+
+.descricao button:hover {
+    cursor: pointer;
+    background-color: #118FD2;
+}
+/*!******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/components/Banner/banner.css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************/
+.banner {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    margin-top: 2vw;
+    border-top: #118FD2 3px solid;
+    background-color: #118FD2;
+}
+/*!****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/components/Mesas/mesas.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************/
+.mesas h1 {
+    margin: 1vw;
+}
+/*!********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/components/MesasDestaque/mesasdestaque.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************/
+.cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 2vw;
+    background-color:#D9D9D9;
+    padding: 1vw;
+    width: 95%;
+    margin: 0 auto;
+    border: none;
+    border-radius: 1vw;
+}
+
+.mesas h1 {
+    margin: 1vw;
+}
+/*!**********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/components/ItemMesa/itemmesa.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************/
+.card {
+    background-color: #242038;
+    border-radius: 0.3vw;
+    color: white;
+    width: 20%;
+    height: 15vw;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #D9D9D9;
+}
+
+.card:hover {
+    border: 2px solid #118FD2;
+}
+
+#div1 {
+    display: flex;
+    gap: 1vw;
+    margin: 0.5vw;
+}
+
+#div1 img {
+    min-width: 30%;
+    max-width: 30%;
+    min-height: 4vw;
+    max-height: 4vw;
+    border: none;
+    border-radius: 0.4vw;
+}
+
+#div2 {
+    display: flex;
+    flex-direction: column;
+    min-width: 65%;
+    max-width: 65%;
+    max-height: 4vw;
+    min-height: 4vw;
+       
+}
+
+#div2 h2 {
+    display: flex;
+    align-items: center;
+    height: 3vw;
+}
+
+#div2 h3 {
+    height: 2vw;
+}
+
+.cards h4 {
+    height: 100%;
+    margin-left: 1vw;
+}
+
+#div3 {
+    display: flex;
+    justify-content: space-around;
+}
+
+#div3 h5 {
+    background-color: #1AB800;
+    border: none;
+    border-radius: 0.2vw;
+    margin-bottom: 0.5vw;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    height: 2vw;
+    padding: 0.8vw; 
+    width: 30%;
+}
+
+#div3 button {
+    background-color: #118FD2;
+    border: none;
+    border-radius: 0.2vw;
+    padding: 0.8vw;
+    height: 2vw;
+    color: white;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+#div3 button:hover {
+    cursor: pointer;
+}
+
+#div3 a {
+    text-decoration: none;
+    color: #D9D9D9;
+    font-weight: 500;
+}
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/components/MesasRecomendadas/mesasrecomendadas.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************/
+.cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 2vw;
+    background-color:#D9D9D9;
+    padding: 1vw;
+    width: 95%;
+    margin: 0 auto;
+    border: none;
+    border-radius: 1vw;
+}
+
+.mesas h1 {
+    margin: 1vw;
+}
+/*!**********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/components/Pesquisa/pesquisa.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************/
+.pesquisa-home {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 3vw;
+    width: 50vw;
+}
+
+.filtros {
+    background-color: #242038;
+    border: 1px black solid;
+    border-right: none;
+    border-top-left-radius: 0.8vw;
+    border-bottom-left-radius: 0.8vw;
+    width: 10%;
+    height: 4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.filtros img {
+    filter: invert(99%) sepia(1%) saturate(4224%) hue-rotate(235deg) brightness(118%) contrast(100%);
+    width: 2vw;
+}
+
+.filtros:hover {
+    cursor: pointer;
+}
+
+.pesquisa-texto {
+    border: 1px black solid;
+    width: 80%;
+    height: 4vw;
+}
+
+.pesquisa-texto input {
+    border: none;
+    outline: none;
+    height: 100%;
+    width: 100%;
+    font-size: 1.2vw;
+    padding-left: 1vw;
+    background-color: #D9D9D9;
+}
+
+.botao {
+    background-color: #118FD2;
+    border: 1px black solid;
+    border-left: none;
+    border-top-right-radius: 0.8vw;
+    border-bottom-right-radius: 0.8vw;
+    width: 10%;
+    height: 4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botao img {
+    width: 1.5vw;
+}
+
+.botao:hover {
+    cursor: pointer;
+}

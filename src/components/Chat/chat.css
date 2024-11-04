@@ -4,6 +4,7 @@
     flex-direction: column;
     background-color: white;
     padding-top: 1vw;
+    justify-content: space-between;
 }
 
 .enviar-mensagem {
@@ -13,7 +14,7 @@
     flex-direction: column;
     gap: 0.1vw;
     align-items: center; /* Centraliza verticalmente os itens */
-    padding: 10px; /* Espaço interno */
+    padding: 1vw; /* Espaço interno */
     background-color: #f9f9f9; /* Cor de fundo da área de entrada */
     border-top: 1px solid #ccc; /* Borda superior */
     border-radius: 5px; /* Arredondar os cantos */
@@ -21,10 +22,10 @@
 
 .enviar-mensagem input {
     width: 100%;
-    padding: 10px; /* Espaçamento interno do input */
+    padding: 1vw; /* Espaçamento interno do input */
     border: 1px solid #ccc; /* Borda do input */
     border-radius: 4px; /* Arredondar os cantos do input */
-    font-size: 16px; /* Tamanho da fonte do input */
+    font-size: 1vw; /* Tamanho da fonte do input */
     outline: none;
 }
 
@@ -44,7 +45,7 @@
     color: white; /* Cor do texto do botão */
     border: none; /* Remove a borda padrão do botão */
     border-radius: 4px; /* Arredondar os cantos do botão */
-    padding: 8px; /* Espaçamento interno do botão */
+    padding: 0.4vw; /* Espaçamento interno do botão */
     cursor: pointer; /* Muda o cursor ao passar sobre o botão */
     transition: background-color 0.3s; /* Animação na mudança de cor */
 }
@@ -55,8 +56,6 @@
 
 
 .mensagens {
-    min-height: 86%;
-    max-height: 0;
     width: 95%;
     margin: 0 auto;
     display: flex;

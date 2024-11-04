@@ -95,8 +95,14 @@
 
 
 .arquivo h3 {
+    color: black;
     font-size: 0.8vw;
     font-weight: 400;
+}
+
+.arquivo h3:hover {
+    cursor: pointer;
+    color: #118FD2;
 }
 
 .arquivos {
