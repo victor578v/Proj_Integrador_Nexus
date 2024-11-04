@@ -9,12 +9,13 @@ generator client {
 
 model Usuario {
   id          Int          @id @default(autoincrement())
-  name        String
+  nome        String
   email       String       @unique
-  password    String
-  mesas       Mesa[]
+  senha    String
+  mesas       Mesa[]       @relation("UsuarioMesas") // Mesas que o usuário é dono
   personagens Personagem[]
   Mensagem    Mensagem[]
+  mesaAtual   Mesa[]       @relation("MesaUsuarios") // Mesas onde o usuário está online
 
   @@map("usuarios")
 }
@@ -23,12 +24,28 @@ model Mesa {
   id          Int          @id @default(autoincrement())
   nome        String
   sistema     String
-  dono        Usuario      @relation(fields: [userId], references: [id])
+  descricao   String
+  dono        Usuario      @relation("UsuarioMesas", fields: [userId], references: [id]) // Dono da mesa
   userId      Int
   mensagens   Mensagem[]
   personagens Personagem[]
+  usuarios    Usuario[]    @relation("MesaUsuarios") // Usuários online na mesa
+  imagem      Imagem       @relation(fields: [imagemId], references: [id]) // Referência à imagem
+  imagemId    Int          @unique
 
   @@map("mesas")
+}
+
+model Imagem {
+  id        Int     @id @default(autoincrement())
+  tipo      String // Tipo da imagem (ex: image/jpeg)
+  tamanho   Int // Tamanho da imagem em bytes (para uploads)
+  url       String? // URL da imagem armazenada (para imagens via URL)
+  dados     Bytes? // Armazena os dados da imagem (para uploads)
+  descricao String? // Descrição da imagem
+  Mesa      Mesa[]
+
+  @@map("imagens")
 }
 
 model Mensagem {
