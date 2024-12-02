@@ -1,0 +1,72 @@
+.cadastrar-container {
+    background-color: #d9d9d9;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 37vw;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.cadastrar-box {
+    background-color: #ffffff;
+    padding: 2vw;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 30%;
+    text-align: center;
+}
+
+.cadastrar-box h1 {
+    margin-bottom: 1vw;
+    color: #333;
+}
+
+.cadastrar-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+.cadastrar-form label {
+    text-align: left;
+    color: #555;
+    font-size: 0.9vw;
+}
+
+.cadastrar-form input {
+    padding: 0.8vw;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1vw;
+}
+
+.cadastrar-form button {
+    padding: 0.8vw;
+    border: none;
+    border-radius: 4px;
+    background-color: #28a745; /* Verde para diferenciar do login */
+    color: white;
+    font-size: 1vw;
+    cursor: pointer;
+}
+
+.cadastrar-form button:hover {
+    background-color: #218838;
+}
+
+.login-link {
+    margin-top: 1vw;
+    color: #555;
+}
+
+.login-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}

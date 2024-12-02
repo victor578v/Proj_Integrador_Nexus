@@ -56,7 +56,7 @@ export default function Entrar() {
 
                     <button type="submit">Entrar</button>
                 </form>
-                <p className="signup-link">Não tem uma conta? <a href="/signup">Cadastre-se</a></p>
+                <p className="signup-link">Não tem uma conta? <a href="/cadastrar">Cadastre-se</a></p>
             </div>
         </main>
     );

@@ -3,6 +3,8 @@ import "./globals.css";
 import Footer from "@/components/Footer/footer";
 import React from "react";
 import { Navbar } from "@/components/Navbar/navbar";
+import { Toaster } from "sonner";
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,10 +27,11 @@ interface RootLayoutProps {
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
-
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <Toaster />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"></link>
         <Navbar />
         {children}
         <Footer />
@@ -36,3 +39,4 @@ export default function RootLayout({ children }: RootLayoutProps) {
     </html>
   );
 }
+

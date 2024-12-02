@@ -1,5 +1,6 @@
 {
-  "/entrar/page": "app/entrar/page.js",
+  "/mesa/[id]/page": "app/mesa/[id]/page.js",
   "/page": "app/page.js",
-  "/mesa/[id]/page": "app/mesa/[id]/page.js"
+  "/entrar/page": "app/entrar/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js"
 }

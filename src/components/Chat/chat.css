@@ -20,16 +20,19 @@
     border-radius: 5px; /* Arredondar os cantos */
 }
 
-.enviar-mensagem input {
+.enviar-mensagem textarea {
     width: 100%;
+    max-height: 7vw;
+    height: 3.5vw;
     padding: 1vw; /* Espaçamento interno do input */
     border: 1px solid #ccc; /* Borda do input */
     border-radius: 4px; /* Arredondar os cantos do input */
     font-size: 1vw; /* Tamanho da fonte do input */
     outline: none;
+    resize: none; /* Impede que o usuário redimensione o campo manualmente */
 }
 
-.enviar-mensagem input:focus {
+.enviar-mensagem textarea:focus {
     border: #118FD2 1px solid;
 }
 
@@ -57,6 +60,7 @@
 
 .mensagens {
     width: 95%;
+    height: 40vw;
     margin: 0 auto;
     display: flex;
     flex-direction: column;

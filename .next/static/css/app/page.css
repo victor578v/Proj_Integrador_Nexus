@@ -1,3 +1,113 @@
+/*!********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./node_modules/react-responsive-modal/styles.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************/
+.react-responsive-modal-root {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.react-responsive-modal-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.react-responsive-modal-container {
+  height: 100%;
+  outline: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: center;
+}
+
+/* Used to trick the browser to center the modal content properly  */
+.react-responsive-modal-containerCenter:after {
+  width: 0;
+  height: 100%;
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.react-responsive-modal-modal {
+  max-width: 800px;
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+  background: #ffffff;
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.25);
+  margin: 1.2rem;
+  padding: 1.2rem;
+  position: relative;
+  overflow-y: auto;
+}
+
+.react-responsive-modal-closeButton {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background-color: transparent;
+  display: flex;
+}
+
+/* Used to fix a screen glitch issues with the animation see https://github.com/pradel/react-responsive-modal/issues/495 */
+.react-responsive-modal-overlay,
+.react-responsive-modal-container,
+.react-responsive-modal-modal {
+  animation-fill-mode: forwards !important;
+}
+
+@keyframes react-responsive-modal-overlay-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes react-responsive-modal-overlay-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes react-responsive-modal-modal-in {
+  0% {
+    transform: scale(0.96);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(100%);
+    opacity: 1;
+  }
+}
+
+@keyframes react-responsive-modal-modal-out {
+  0% {
+    transform: scale(100%);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.96);
+    opacity: 0;
+  }
+}
+
 /*!**********************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/components/CriaMesa/criamesa.css ***!
   \**********************************************************************************************************************************************************************************************************************************************************************************/
@@ -26,15 +136,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start;
+    justify-content:baseline;
     height: 20vw;
     gap: 0.2vw;
+    width: 100%;
 }
 
 .imagem img {
     height: 16vw;
+    width: 100%;
     border: #118FD2 2px solid;
     border-radius: 0.4vw;
+}
+
+.imagem img:hover {
+    cursor: pointer;
 }
 
 .imagem h2 {
@@ -59,7 +175,7 @@
 
 .componente {
     display: flex;
-    justify-content: start;
+    justify-content: baseline;
     flex-direction: column;
     gap: 0.2vw;
 }
@@ -117,7 +233,7 @@
 .descricao {
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: baseline;
     align-items: center;
     height: 20vw;
     width: 100%;
@@ -149,6 +265,63 @@
     cursor: pointer;
     background-color: #118FD2;
 }
+
+/* Estilos gerais do modal */
+.react-modal {
+    padding: 1.5vw;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+}
+
+.react-modal h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.react-modal p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+/* Estilo para o input */
+.react-modal input {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.react-modal input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+/* Estilo para o botão de fechar */
+.react-modal button {
+    background-color: #007bff;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.react-modal button:hover {
+    background-color: #0056b3;
+}
+
 /*!******************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/components/Banner/banner.css ***!
   \******************************************************************************************************************************************************************************************************************************************************************************/

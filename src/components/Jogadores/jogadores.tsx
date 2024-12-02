@@ -3,12 +3,9 @@ import React, { useEffect, useState } from 'react';
 import './jogadores.css';
 import { UsuarioI } from '@/utils/types/usuarios';
 import { ItemJogador } from '../ItemJogador/Itemjogador';
+import { MesaIdI } from '@/utils/types/mesas';
 
-interface JogadoresProps {
-    mesaId: number;
-}
-
-const Jogadores: React.FC<JogadoresProps> = ({ mesaId }) => {
+const Jogadores: React.FC<MesaIdI> = ({ mesaId }) => {
     const [usuarios, setUsuarios] = useState<UsuarioI[]>([]);
 
     useEffect(() => {

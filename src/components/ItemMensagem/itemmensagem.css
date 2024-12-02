@@ -26,4 +26,9 @@
 
 .identificadores h2 {
     padding-right: 2vw;
+    color: black;
+}
+
+.identificadores h3 {
+    color: black;
 }

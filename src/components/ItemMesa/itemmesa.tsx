@@ -8,7 +8,7 @@ export function ItemMesa({ dataMesas }: { dataMesas: MesaI }) {
     return (
         <div className="card">
             <div id="div1">
-                <img src={dataMesas.imagem.url} alt={dataMesas.imagem.descricao} />
+                <img src={dataMesas.imagem.url} alt={"Imagem da mesa" +dataMesas.nome} />
                 <div id="div2">
                     <h2>{dataMesas.nome}</h2>
                     <h3>{dataMesas.sistema}</h3>

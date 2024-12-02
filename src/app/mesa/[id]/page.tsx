@@ -89,7 +89,7 @@ const Mesa = () => {
                 <Jogadores mesaId={Number(mesaId)} key={refreshKey} />
                 <Biblioteca />
             </Sidebar>
-            <Chat />
+            <Chat mesaId={Number(mesaId)}/>
         </main>
     );
 };

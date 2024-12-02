@@ -11,14 +11,13 @@ const MesasDestaque = () => {
     useEffect(() => {
         
         const getDados = async () => {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/mesas`);
+            const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/mesas/destaque`);
             const dados = await response.json();
             console.log(dados);
             setMesas(dados);
+            console.log(dados)
         };
-
         getDados();
-
     }, []); 
 
     const listaMesas = mesas.map(mesa => (
@@ -29,7 +28,11 @@ const MesasDestaque = () => {
         <div>
             <h1>Mesas Em Destaque</h1>
             <div className="cards">
-                {listaMesas}
+                {listaMesas? (
+                    listaMesas
+                ) : (
+                    <p>Carregando...</p>
+                )}
             </div>
         </div>
     );

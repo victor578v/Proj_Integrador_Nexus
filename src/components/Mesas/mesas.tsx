@@ -1,13 +1,16 @@
-import React from 'react';
-import Link from 'next/link';
+import React, { ReactNode } from 'react';
 import './mesas.css';
 
-const Mesas = ({ children }) => { // Adicione { children } como argumento
-    return (
-        <section className="mesas"> {/* Use className em vez de class */}
-            {children}
-        </section>
-    );
+interface MesasProps {
+  children: ReactNode; // Tipando 'children' como ReactNode
+}
+
+const Mesas: React.FC<MesasProps> = ({ children }) => { 
+  return (
+    <section className="mesas"> 
+      {children}
+    </section>
+  );
 };
 
 export default Mesas;

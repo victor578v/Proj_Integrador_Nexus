@@ -162,7 +162,26 @@ nav {
     cursor: pointer;
 }
 
-.mesas h2 {
+.mesas-nav {
+    display: flex;
+    gap: 1vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.opcoes-botao {
+    background-color:#d9d9d9;
+    border: none;
+    padding: 0.5vw;
+    border-radius: 0.25vw;
+}
+
+.opcoes-botao:hover {
+    background-color:#118FD2;
+    cursor: pointer;
+}
+
+.mesas-nav h2 {
     color: white;
 }
 
@@ -189,7 +208,7 @@ nav {
 
 #cadastro {
     border-radius: 1vw;
-    padding: 1vw;
+    padding: 0.8vw;
     border: none;
 }
 
@@ -212,8 +231,9 @@ nav {
 }
 
 .usuario-logado button {
-    border-radius: 1vw;
-    padding: 0.7vw;
+    width: 5vw;
+    border-radius: 0.8vw;
+    padding: 0.8vw;
     border: none;
     font-size: 0.8vw;
 }
@@ -229,7 +249,204 @@ nav {
     color: #d9d9d9;
 }
 
+.react-modal2 {
+    padding: 2vw; /* Aumenta o padding para garantir que o conteúdo não fique colado nas bordas */
+    background-color: #ffffff;
+    border-radius: 12px; /* Borda arredondada para um visual mais suave */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 90%;
+    text-align: left;
+    margin: 0 auto; /* Centraliza o modal */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.3s ease-out; /* Suaviza a entrada do modal */
+}
+
+.react-modal2 h2 {
+    font-size: 1.5em;
+    margin-bottom: 1.5em; /* Espaço para o título */
+    color: #333;
+}
+
+.react-modal2 form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em; /* Espaçamento entre os campos */
+    width: 100%;
+}
+
+.react-modal2 label {
+    font-size: 1em;
+    color: #555;
+}
+
+.react-modal2 input, textarea {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    transition: border-color 0.2s ease-in-out;
+    resize: vertical;
+}
+
+.react-modal2 input:focus {
+    border-color: #007BFF; /* Foca com uma borda azul */
+    outline: none; /* Remove o contorno do navegador */
+}
+
+.react-modal2 textarea:focus {
+    border-color: #007BFF; /* Foca com uma borda azul */
+    outline: none; /* Remove o contorno do navegador */
+}
+
+.react-modal2 button {
+    padding: 12px 20px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.react-modal2 button:hover {
+    background-color: #0056b3; /* Muda a cor ao passar o mouse */
+}
+
+.react-modal2 button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.react-modal2 #vagas {
+    display: flex;
+}
+
+.react-modal2 #vagas label {
+    width: 15%;
+}
+
+.react-modal2 #vagas input {
+    width: 3vw;
+}
+
+
 @media (max-width:800px) {
     
+}
+
+/*!********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./node_modules/react-responsive-modal/styles.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************/
+.react-responsive-modal-root {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.react-responsive-modal-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.react-responsive-modal-container {
+  height: 100%;
+  outline: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: center;
+}
+
+/* Used to trick the browser to center the modal content properly  */
+.react-responsive-modal-containerCenter:after {
+  width: 0;
+  height: 100%;
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.react-responsive-modal-modal {
+  max-width: 800px;
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+  background: #ffffff;
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.25);
+  margin: 1.2rem;
+  padding: 1.2rem;
+  position: relative;
+  overflow-y: auto;
+}
+
+.react-responsive-modal-closeButton {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background-color: transparent;
+  display: flex;
+}
+
+/* Used to fix a screen glitch issues with the animation see https://github.com/pradel/react-responsive-modal/issues/495 */
+.react-responsive-modal-overlay,
+.react-responsive-modal-container,
+.react-responsive-modal-modal {
+  animation-fill-mode: forwards !important;
+}
+
+@keyframes react-responsive-modal-overlay-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes react-responsive-modal-overlay-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes react-responsive-modal-modal-in {
+  0% {
+    transform: scale(0.96);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(100%);
+    opacity: 1;
+  }
+}
+
+@keyframes react-responsive-modal-modal-out {
+  0% {
+    transform: scale(100%);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.96);
+    opacity: 0;
+  }
 }
 

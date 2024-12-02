@@ -147,16 +147,19 @@ main {
     border-radius: 5px; /* Arredondar os cantos */
 }
 
-.enviar-mensagem input {
+.enviar-mensagem textarea {
     width: 100%;
+    max-height: 7vw;
+    height: 3.5vw;
     padding: 1vw; /* Espaçamento interno do input */
     border: 1px solid #ccc; /* Borda do input */
     border-radius: 4px; /* Arredondar os cantos do input */
     font-size: 1vw; /* Tamanho da fonte do input */
     outline: none;
+    resize: none; /* Impede que o usuário redimensione o campo manualmente */
 }
 
-.enviar-mensagem input:focus {
+.enviar-mensagem textarea:focus {
     border: #118FD2 1px solid;
 }
 
@@ -184,6 +187,7 @@ main {
 
 .mensagens {
     width: 95%;
+    height: 40vw;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -241,7 +245,13 @@ main {
 
 .identificadores h2 {
     padding-right: 2vw;
+    color: black;
 }
+
+.identificadores h3 {
+    color: black;
+}
+
 /*!************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/components/Jogadores/jogadores.css ***!
   \************************************************************************************************************************************************************************************************************************************************************************************/
