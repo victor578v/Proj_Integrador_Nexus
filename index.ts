@@ -1,6 +1,7 @@
 import express from 'express'
 import usuariosRoutes from './src/routes/usuarios'
 import mesasRoutes from './src/routes/mesas'
+import imagensRoutes from './src/routes/imagens'
 import cors from 'cors'
 
 const app = express()
@@ -11,6 +12,7 @@ app.use(cors())
 
 app.use("/usuarios", usuariosRoutes)
 app.use("/mesas", mesasRoutes)
+app.use("/imagens", imagensRoutes)
 
 app.get('/', (req, res) => {
   res.send('API: Loja de Jogos')

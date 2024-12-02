@@ -7,35 +7,19 @@ VALUES
 
 
 INSERT INTO
-    imagens (tipo, tamanho, url, dados, descricao)
+    imagens (url)
 VALUES
     (
-        'image/jpeg',
-        204800,
-        'https://ogimg.infoglobo.com.br/in/24798511-20a-1e5/FT1500A/690/nerdcast-rpg-cthulhu.jpg',
-        'https://ogimg.infoglobo.com.br/in/24798511-20a-1e5/FT1500A/690/nerdcast-rpg-cthulhu.jpg',
-        'Imagem da mesa de aventura.'
+        'https://ogimg.infoglobo.com.br/in/24798511-20a-1e5/FT1500A/690/nerdcast-rpg-cthulhu.jpg'
     ),
     (
-        'image/jpeg',
-        204800,
-        'https://ogimg.infoglobo.com.br/in/24798511-20a-1e5/FT1500A/690/nerdcast-rpg-cthulhu.jpg',
-        'https://ogimg.infoglobo.com.br/in/24798511-20a-1e5/FT1500A/690/nerdcast-rpg-cthulhu.jpg',
-        'Imagem da mesa de estratégia.'
+        'https://ogimg.infoglobo.com.br/in/24798511-20a-1e5/FT1500A/690/nerdcast-rpg-cthulhu.jpg'
     ),
     (
-        'image/jpeg',
-        204800,
-        'https://ogimg.infoglobo.com.br/in/24798511-20a-1e5/FT1500A/690/nerdcast-rpg-cthulhu.jpg',
-        'https://ogimg.infoglobo.com.br/in/24798511-20a-1e5/FT1500A/690/nerdcast-rpg-cthulhu.jpg',
-        'Imagem da mesa de RPG.'
+        'https://ogimg.infoglobo.com.br/in/24798511-20a-1e5/FT1500A/690/nerdcast-rpg-cthulhu.jpg'
     ),
     (
-        'image/jpeg',
-        204800,
-        'https://ogimg.infoglobo.com.br/in/24798511-20a-1e5/FT1500A/690/nerdcast-rpg-cthulhu.jpg',
-        'https://ogimg.infoglobo.com.br/in/24798511-20a-1e5/FT1500A/690/nerdcast-rpg-cthulhu.jpg',
-        'Imagem da mesa de cartas.'
+        'https://ogimg.infoglobo.com.br/in/24798511-20a-1e5/FT1500A/690/nerdcast-rpg-cthulhu.jpg'
     );
 
 INSERT INTO

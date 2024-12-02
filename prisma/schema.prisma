@@ -11,7 +11,7 @@ model Usuario {
   id          Int          @id @default(autoincrement())
   nome        String
   email       String       @unique
-  senha    String
+  senha       String
   mesas       Mesa[]       @relation("UsuarioMesas") // Mesas que o usuário é dono
   personagens Personagem[]
   Mensagem    Mensagem[]
@@ -25,6 +25,8 @@ model Mesa {
   nome        String
   sistema     String
   descricao   String
+  vagas       Boolean  @default(false)// Saber se existe vagas na mesa
+  mestre_mesa Boolean  @default(false)// Saber se o mestre esta logado na mesa
   dono        Usuario      @relation("UsuarioMesas", fields: [userId], references: [id]) // Dono da mesa
   userId      Int
   mensagens   Mensagem[]
@@ -37,20 +39,16 @@ model Mesa {
 }
 
 model Imagem {
-  id        Int     @id @default(autoincrement())
-  tipo      String // Tipo da imagem (ex: image/jpeg)
-  tamanho   Int // Tamanho da imagem em bytes (para uploads)
-  url       String? // URL da imagem armazenada (para imagens via URL)
-  dados     Bytes? // Armazena os dados da imagem (para uploads)
-  descricao String? // Descrição da imagem
-  Mesa      Mesa[]
+  id   Int    @id @default(autoincrement())
+  url  String @db.Text // Altera o tipo para Text no banco de dados
+  Mesa Mesa[]
 
   @@map("imagens")
 }
 
 model Mensagem {
   id       Int     @id @default(autoincrement())
-  conteudo String
+  conteudo String  @db.Text
   autor    Usuario @relation(fields: [userId], references: [id])
   userId   Int
   mesa     Mesa    @relation(fields: [mesaId], references: [id])
