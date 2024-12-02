@@ -13,7 +13,7 @@ const CriaMesa = () => {
     const [sistema, setSistema] = useState('');
     const [senha, setSenha] = useState('');
     const [descricao, setDescricao] = useState('');
-    const [vagas, setVagas] = useState<boolean>(false);
+    const [vagas, setVagas] = useState<boolean | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false); // Estado do modal
 
     const handleSubmit = async (event: React.FormEvent) => {
