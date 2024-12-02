@@ -15,7 +15,7 @@ app.use("/mesas", mesasRoutes)
 app.use("/imagens", imagensRoutes)
 
 app.get('/', (req, res) => {
-  res.send('API: Loja de Jogos')
+  res.send('API do Projeto Nexus')
 })
 
 app.listen(port, () => {
