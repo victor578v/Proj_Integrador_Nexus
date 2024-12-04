@@ -1,0 +1,11 @@
+.cards-pesquisa {
+    display: flex;
+    justify-content: baseline;
+    gap: 2vw;
+    background-color:#D9D9D9;
+    padding: 1vw;
+    width: 95%;
+    margin: 0 auto;
+    border: none;
+    border-radius: 1vw;
+}

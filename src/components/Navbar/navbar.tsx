@@ -11,7 +11,7 @@ import { ImagemI } from "@/utils/types/imagens";
 
 export function Navbar() {
     const pathname = usePathname();
-    const isMesaPage = pathname.includes("/mesa");
+    const isMesaPage = pathname.startsWith("/mesa");
     const { usuario, logaUsuario, deslogaUsuario } = useUsuarioStore();
 
     // Estado para armazenar o nome da mesa e os dados da mesa
@@ -40,7 +40,7 @@ export function Navbar() {
         }
 
         // Função para buscar os dados da mesa
-        async function buscaDadosMesa(idMesa: string) {
+        async function buscaDadosMesa(idMesa: number) {
             try {
                 const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/mesas/mesa/${idMesa}`);
                 if (response.status === 200) {
@@ -67,7 +67,7 @@ export function Navbar() {
         if (isMesaPage) {
             const idMesa = pathname.split("/").pop(); // Pega o id da mesa da URL
             if (idMesa) {
-                buscaDadosMesa(idMesa);
+                buscaDadosMesa(Number(idMesa));
             }
         }
     }, [pathname]);
@@ -93,6 +93,7 @@ export function Navbar() {
 
     // Função para atualizar os dados da mesa
     const handleUpdateMesa = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault()
         if (!mesa) return;
 
         const form = event.target as HTMLFormElement;
@@ -103,6 +104,8 @@ export function Navbar() {
             sistema: form.sistema.value,
             vagas: form.vagas.checked,
         };
+
+        console.log(updatedMesa)
 
         // Atualizando a URL da imagem, caso tenha sido modificada
         if (form.imagemUrl.value && imagemMesa) {

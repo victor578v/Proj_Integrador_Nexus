@@ -14,6 +14,7 @@ export interface MesaI {
   userId: number; // ID do usuário
   mensagens: MensagemI[]; // Lista de mensagens associadas à mesa
   personagens: PersonagemI[]; // Lista de personagens associados à mesa
+  usuarios: UsuarioI[];
   imagem: ImagemI; // Referência à imagem da mesa
   imagemId: number; // ID da imagem, garantindo que cada mesa tenha apenas uma imagem
 }

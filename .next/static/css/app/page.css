@@ -340,9 +340,7 @@
 .mesas h1 {
     margin: 1vw;
 }
-/*!********************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/components/MesasDestaque/mesasdestaque.css ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************/
+
 .cards {
     display: flex;
     justify-content: space-around;
@@ -354,6 +352,10 @@
     border: none;
     border-radius: 1vw;
 }
+/*!********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/components/MesasDestaque/mesasdestaque.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************/
+
 
 .mesas h1 {
     margin: 1vw;
@@ -391,6 +393,14 @@
     border-radius: 0.4vw;
 }
 
+.invisivel {
+    visibility: hidden; /* Torna o elemento invisível */
+    height: 0;          /* Remove o impacto visual do espaço */
+    margin: 0;          /* Elimina margens associadas */
+    padding: 0;         /* Remove preenchimentos */
+}
+
+
 #div2 {
     display: flex;
     flex-direction: column;
@@ -411,14 +421,14 @@
     height: 2vw;
 }
 
-.cards h4 {
-    height: 100%;
-    margin-left: 1vw;
-}
-
 #div3 {
     display: flex;
     justify-content: space-around;
+}
+
+.card h4 {
+    height: 100%;
+    margin-left: 1vw;
 }
 
 #div3 h5 {
@@ -458,17 +468,7 @@
 /*!****************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/components/MesasRecomendadas/mesasrecomendadas.css ***!
   \****************************************************************************************************************************************************************************************************************************************************************************************************/
-.cards {
-    display: flex;
-    justify-content: space-around;
-    gap: 2vw;
-    background-color:#D9D9D9;
-    padding: 1vw;
-    width: 95%;
-    margin: 0 auto;
-    border: none;
-    border-radius: 1vw;
-}
+
 
 .mesas h1 {
     margin: 1vw;
@@ -542,3 +542,5 @@
 .botao:hover {
     cursor: pointer;
 }
+
+

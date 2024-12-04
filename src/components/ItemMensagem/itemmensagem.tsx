@@ -6,7 +6,7 @@ import { useUsuarioStore } from "@/context/usuario";
 import Swal from "sweetalert2"; // Importando o SweetAlert2
 import { toast } from "sonner";
 
-export function ItemMensagem({ dataMensagem, onMensagemDeletada }: { dataMensagem: MensagemI; onMensagemDeletada: (mensagemId: number) => void; }) {
+export function ItemMensagem({ dataMensagem }: { dataMensagem: MensagemI; }) {
   const { usuario } = useUsuarioStore(); // Usuário logado
 
   const deletarMensagem = async () => {
@@ -36,7 +36,6 @@ export function ItemMensagem({ dataMensagem, onMensagemDeletada }: { dataMensage
           position: "top-center", // Posiciona a notificação no topo da tela
         });
 
-        onMensagemDeletada(dataMensagem.id); // Remove a mensagem do estado local
       } catch (error) {
         console.error("Erro ao deletar mensagem:", error);
 
@@ -56,8 +55,8 @@ export function ItemMensagem({ dataMensagem, onMensagemDeletada }: { dataMensage
   return (
     <div className="mensagem">
       <div className="identificadores">
-        <h2>{personagem ? personagem.nickname : "Sem Personagem"}</h2>
-        <h3>{dataMensagem.autor.nome}</h3>
+        <h2>{dataMensagem.autor.nome === "sistema" ? "Sistema" : (personagem ? personagem.nickname : "Sem Personagem")}</h2>
+        <h3>{dataMensagem.autor.nome === "sistema" ? "" : dataMensagem.autor.nome}</h3>
         {usuario.id === dataMensagem.userId && (
           <button className="btn-deletar" onClick={deletarMensagem}>
             🗑️ Deletar
@@ -66,5 +65,5 @@ export function ItemMensagem({ dataMensagem, onMensagemDeletada }: { dataMensage
       </div>
       <h1>{dataMensagem.conteudo}</h1>
     </div>
-  );
+  );  
 }

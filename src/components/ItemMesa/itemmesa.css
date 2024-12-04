@@ -28,6 +28,14 @@
     border-radius: 0.4vw;
 }
 
+.invisivel {
+    visibility: hidden; /* Torna o elemento invisível */
+    height: 0;          /* Remove o impacto visual do espaço */
+    margin: 0;          /* Elimina margens associadas */
+    padding: 0;         /* Remove preenchimentos */
+}
+
+
 #div2 {
     display: flex;
     flex-direction: column;
@@ -48,14 +56,14 @@
     height: 2vw;
 }
 
-.cards h4 {
-    height: 100%;
-    margin-left: 1vw;
-}
-
 #div3 {
     display: flex;
     justify-content: space-around;
+}
+
+.card h4 {
+    height: 100%;
+    margin-left: 1vw;
 }
 
 #div3 h5 {

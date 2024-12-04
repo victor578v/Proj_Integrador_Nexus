@@ -4,6 +4,7 @@
 main {
     display: flex;
     background-color: #242038;
+    width: 100%;
 }
 
 
@@ -126,7 +127,7 @@ main {
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/components/Chat/chat.css ***!
   \**************************************************************************************************************************************************************************************************************************************************************************/
 .chat {
-    width: 100%;
+    width: 78%;
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -187,7 +188,7 @@ main {
 
 .mensagens {
     width: 95%;
-    height: 40vw;
+    height: 51vw;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -220,7 +221,7 @@ main {
 .mensagem {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 95%;
     margin-bottom: 2vw;
 }
 
@@ -235,6 +236,8 @@ main {
 .mensagem h1 {
     font-size: 1vw;
     font-weight: 300;
+    white-space: pre-wrap; /* Preserva quebras de linha */
+    word-wrap: break-word; /* Permite quebrar palavras longas se necessário */
 }
 
 .identificadores {
@@ -255,7 +258,28 @@ main {
 /*!************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/components/Jogadores/jogadores.css ***!
   \************************************************************************************************************************************************************************************************************************************************************************************/
+.personagens {
+    display: flex;
+    flex-direction: column;
+    border-bottom: #118FD2 2px solid;
+    padding: 0.5vw;
+    gap: 1vw;
+}
+
+.personagens button {
+    border: none;
+    border-radius: 0.2vw;
+    padding: 0.4vw;
+}
+
+.personagens button:hover {
+    background-color: #118FD2;
+    color: white;
+    cursor: pointer;
+}
+
 .jogadores {
+    width: 100%;
     border-bottom: #118FD2 2px solid;
     padding: 1vw;
     display: flex;
@@ -310,6 +334,6 @@ main {
   \********************************************************************************************************************************************************************************************************************************************************************************/
 .jogadores-biblioteca {
     background-color: #242038;
-    width: 26%;
+    width: 22%;
     height: 100%;
 }

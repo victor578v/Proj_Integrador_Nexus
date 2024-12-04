@@ -89,7 +89,7 @@ const CriaMesa = () => {
                 <form onSubmit={handleSubmit}>
                     <div className="imagem" onClick={() => setIsModalOpen(true)}>
                         <h2>Adicione uma imagem</h2>
-                        <img src={imagem || 'img/placeholder.webp'} alt="Imagem da Mesa" />
+                        <img src={imagem || '/img/placeholder.webp'} alt="Imagem da Mesa" />
                     </div>
 
                     <div className="info-basica">

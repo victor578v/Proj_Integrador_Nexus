@@ -1,5 +1,5 @@
 .chat {
-    width: 100%;
+    width: 78%;
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -60,7 +60,7 @@
 
 .mensagens {
     width: 95%;
-    height: 40vw;
+    height: 51vw;
     margin: 0 auto;
     display: flex;
     flex-direction: column;

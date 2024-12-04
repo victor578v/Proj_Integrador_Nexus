@@ -1,8 +1,11 @@
-import React from 'react';
-import Link from 'next/link';
+import React, { ReactNode } from 'react';
 import './sidebar.css';
 
-const Sidebar = ({ children }) => { // Adicione { children } como argumento
+interface MesasProps {
+    children: ReactNode; // Tipando 'children' como ReactNode
+  }
+
+  const Sidebar: React.FC<MesasProps> = ({ children }) => { 
     return (
             <section className="jogadores-biblioteca">
                 {children}

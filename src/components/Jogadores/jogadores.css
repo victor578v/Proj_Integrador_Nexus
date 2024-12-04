@@ -1,4 +1,25 @@
+.personagens {
+    display: flex;
+    flex-direction: column;
+    border-bottom: #118FD2 2px solid;
+    padding: 0.5vw;
+    gap: 1vw;
+}
+
+.personagens button {
+    border: none;
+    border-radius: 0.2vw;
+    padding: 0.4vw;
+}
+
+.personagens button:hover {
+    background-color: #118FD2;
+    color: white;
+    cursor: pointer;
+}
+
 .jogadores {
+    width: 100%;
     border-bottom: #118FD2 2px solid;
     padding: 1vw;
     display: flex;

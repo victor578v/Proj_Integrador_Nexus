@@ -1,3 +1,15 @@
 .mesas h1 {
     margin: 1vw;
 }
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 2vw;
+    background-color:#D9D9D9;
+    padding: 1vw;
+    width: 95%;
+    margin: 0 auto;
+    border: none;
+    border-radius: 1vw;
+}

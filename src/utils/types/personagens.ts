@@ -1,3 +1,4 @@
+import { ImagemI } from "./imagens";
 import { MesaI } from "./mesas";
 import { UsuarioI } from "./usuarios";
 
@@ -10,4 +11,6 @@ export interface PersonagemI {
   userId: number;
   mesa: MesaI;
   mesaId: number;
+  imagem: ImagemI;
+  imagemId: number;
 }
