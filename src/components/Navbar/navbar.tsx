@@ -5,7 +5,6 @@ import "./navbar.css";
 import { usePathname } from "next/navigation";
 import { useUsuarioStore } from "@/context/usuario";
 import { Modal } from "react-responsive-modal";
-import "react-responsive-modal/styles.css"; // Importando o CSS do modal
 import { MesaI } from "@/utils/types/mesas";
 import { ImagemI } from "@/utils/types/imagens";
 

@@ -28,8 +28,6 @@ const Jogadores: React.FC<MesaIdI> = ({ mesaId }) => {
     const [vidaAtual, setVidaAtual] = useState<number>();
     const [imagemUrl, setimagemUrl] = useState<string>();
 
-    const isDonoMesa = mesaId === usuario.id;
-
     const getPersonagem = async () => {
         try {
             const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/personagens/mesa/${mesaId}/usuario/${usuario.id}`);
@@ -64,6 +62,9 @@ const Jogadores: React.FC<MesaIdI> = ({ mesaId }) => {
 
         buscaDadosMesa(mesaId);
     }, []); // Dependências vazias para executar apenas uma vez
+
+    const idUsuarioLocal = localStorage.getItem("client_key");
+    const isDonoMesa = mesa?.userId == Number(idUsuarioLocal);
 
     const getDadosUsuarios = async () => {
         if (!mesaId) return; // Se não houver mesaId, não faz nada

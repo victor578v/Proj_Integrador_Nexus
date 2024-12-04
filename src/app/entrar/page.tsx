@@ -27,7 +27,7 @@ export default function Entrar() {
         if (response.status === 200) {
             const dados = await response.json();
             logaUsuario(dados);
-
+            console.log(dados)
             localStorage.setItem("client_key", dados.id);
 
             // Redireciona o usuário para a página inicial após o login bem-sucedido
