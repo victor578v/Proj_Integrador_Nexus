@@ -1,4 +1,4 @@
-import { PrismaClient, Mesa } from "@prisma/client"
+import { PrismaClient } from "@prisma/client"
 import { Router } from "express"
 
 // Configuração do Prisma Client com logs
@@ -35,6 +35,7 @@ const router = Router()
 router.get('/', async (req, res) => {
   const mesas = await prisma.mesa.findMany({
     include: {
+      usuarios: true,
       imagem: true, // Inclui os dados da imagem
     },
   });
@@ -386,9 +387,28 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.get("/pesquisa/:termo", async (req, res) => {
+  const { termo } = req.params;
 
+  try {
+    const mesas = await prisma.mesa.findMany({
+      include: {
+        imagem: true, // Inclui informações da imagem associada
+        usuarios: true, // Inclui informações dos usuários associados
+      },
+      where: {
+        OR: [
+          { nome: { contains: termo, mode: "insensitive" } }, // Busca por nome da mesa (case-insensitive)
+          { sistema: { contains: termo, mode: "insensitive" } }, // Busca pelo sistema utilizado (case-insensitive)
+        ],
+      },
+    });
 
-
+    res.status(200).json(mesas); // Retorna os resultados encontrados
+  } catch (error) {
+    console.error("Erro ao buscar mesas:", error); // Loga o erro no console
+    res.status(500).json({ error: "Erro ao buscar mesas" }); // Retorna um erro ao cliente
+  }
+});
 
 export default router;
-

@@ -42,8 +42,9 @@ model Imagem {
   id   Int    @id @default(autoincrement())
   url  String @db.Text // Altera o tipo para Text no banco de dados
   Mesa Mesa[]
-
+  Personagem Personagem[]
   @@map("imagens")
+  
 }
 
 model Mensagem {
@@ -66,6 +67,8 @@ model Personagem {
   userId     Int
   mesa       Mesa    @relation(fields: [mesaId], references: [id])
   mesaId     Int
+  imagem      Imagem       @relation(fields: [imagemId], references: [id]) // Referência à imagem
+  imagemId    Int          @unique
 
   @@unique([userId, mesaId]) // Garante que o usuário tenha apenas um personagem por mesa
   @@map("personagens")
