@@ -4,6 +4,7 @@ import mesasRoutes from './src/routes/mesas'
 import imagensRoutes from './src/routes/imagens'
 import sistemaRoutes from './src/routes/sistema'
 import personagemRoutes from './src/routes/personagens'
+import arquivosRoutes from './src/routes/arquivos'
 import cors from 'cors'
 import { PrismaClient } from "@prisma/client"
 
@@ -19,6 +20,7 @@ app.use("/mesas", mesasRoutes)
 app.use("/imagens", imagensRoutes)
 app.use("/sistema", sistemaRoutes)
 app.use("/personagens", personagemRoutes)
+app.use("/arquivos", arquivosRoutes)
 
 
 app.get('/', (req, res) => {

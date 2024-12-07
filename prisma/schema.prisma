@@ -20,31 +20,43 @@ model Usuario {
   @@map("usuarios")
 }
 
+model Arquivo {
+  id       Int    @id @default(autoincrement())
+  nome     String // Nome do arquivo
+  conteudo String @default("") @db.Text
+  mesa     Mesa   @relation(fields: [mesaId], references: [id])
+  mesaId   Int
+
+  @@map("arquivos")
+}
+
 model Mesa {
   id          Int          @id @default(autoincrement())
   nome        String
   sistema     String
   descricao   String
-  vagas       Boolean  @default(false)// Saber se existe vagas na mesa
-  mestre_mesa Boolean  @default(false)// Saber se o mestre esta logado na mesa
+  vagas       Boolean      @default(false) // Saber se existe vagas na mesa
+  mestre_mesa Boolean      @default(false) // Saber se o mestre esta logado na mesa
   dono        Usuario      @relation("UsuarioMesas", fields: [userId], references: [id]) // Dono da mesa
   userId      Int
   mensagens   Mensagem[]
+  senha       String?
   personagens Personagem[]
   usuarios    Usuario[]    @relation("MesaUsuarios") // Usuários online na mesa
   imagem      Imagem       @relation(fields: [imagemId], references: [id]) // Referência à imagem
   imagemId    Int          @unique
+  Arquivo     Arquivo[]
 
   @@map("mesas")
 }
 
 model Imagem {
-  id   Int    @id @default(autoincrement())
-  url  String @db.Text // Altera o tipo para Text no banco de dados
-  Mesa Mesa[]
+  id         Int          @id @default(autoincrement())
+  url        String       @db.Text // Altera o tipo para Text no banco de dados
+  Mesa       Mesa[]
   Personagem Personagem[]
+
   @@map("imagens")
-  
 }
 
 model Mensagem {
@@ -67,8 +79,8 @@ model Personagem {
   userId     Int
   mesa       Mesa    @relation(fields: [mesaId], references: [id])
   mesaId     Int
-  imagem      Imagem       @relation(fields: [imagemId], references: [id]) // Referência à imagem
-  imagemId    Int          @unique
+  imagem     Imagem  @relation(fields: [imagemId], references: [id]) // Referência à imagem
+  imagemId   Int     @unique
 
   @@unique([userId, mesaId]) // Garante que o usuário tenha apenas um personagem por mesa
   @@map("personagens")

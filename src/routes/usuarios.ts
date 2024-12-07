@@ -165,6 +165,50 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+router.get("/:id/mesas", async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    // Converte o id de string para número
+    const usuarioId = parseInt(id, 10);
+
+    // Valida se a conversão foi bem-sucedida
+    if (isNaN(usuarioId)) {
+      return res.status(400).json({ erro: "ID inválido" });
+    }
+
+    // Busca as mesas associadas ao usuário
+    const usuarioMesas = await prisma.usuario.findUnique({
+      where: { id: usuarioId }, // Usa o ID convertido
+      include: {
+        mesas: {
+          include: {
+            imagem: true, // Inclui os dados da imagem da mesa
+          },
+        },
+      },
+    });
+
+    if (!usuarioMesas) {
+      return res.status(400).json({ erro: "Usuário não encontrado" });
+    }
+
+    // Retorna as mesas do usuário
+    res.status(200).json(usuarioMesas.mesas.map((mesa) => ({
+      id: mesa.id,
+      nome: mesa.nome,
+      descricao: mesa.descricao,
+      sistema: mesa.sistema,
+      vagas: mesa.vagas,
+      mestre_mesa: mesa.mestre_mesa,
+      imagem: mesa.imagem, // Inclui os dados da imagem da mesa
+    })));
+  } catch (error) {
+    console.error(error); // Para debugar melhor caso ocorra um erro
+    res.status(500).json({ erro: "Erro interno no servidor" });
+  }
+});
+
 
 router.post("/adicionar-personagem/:mesaId/:usuarioId", async (req, res) => {
   const { mesaId, usuarioId } = req.params; // Obtendo os IDs dos parâmetros de rota

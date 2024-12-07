@@ -345,12 +345,12 @@ router.delete("/:mensagemId/:usuarioId", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  const { nome, sistema, descricao, userId, imagemUrl, vagas } = req.body;
+  const { nome, sistema, descricao, userId, imagemUrl, vagas, senha } = req.body;
 
   try {
-    // Garantir que todos os campos obrigatórios sejam fornecidos
+    // Garantir que todos os campos obrigatórios sejam fornecidos, exceto senha
     if (!nome || !sistema || !descricao || !userId || !imagemUrl || vagas === undefined) {
-      return res.status(400).json({ error: "Todos os campos são obrigatórios." });
+      return res.status(400).json({ error: "Todos os campos são obrigatórios, exceto a senha." });
     }
 
     // Garantir que vagas seja um booleano (caso venha como string)
@@ -368,7 +368,7 @@ router.post("/", async (req, res) => {
       },
     });
 
-    // Criar a mesa no banco de dados
+    // Criar a mesa no banco de dados, incluindo senha somente se fornecida
     const novaMesa = await prisma.mesa.create({
       data: {
         nome,
@@ -377,6 +377,7 @@ router.post("/", async (req, res) => {
         userId,
         vagas: vagasBoolean, // Salvar como booleano
         imagemId: imagem.id, // Referencia a imagem criada
+        senha: senha || null, // Se senha não for fornecida, usa null
       },
     });
 
@@ -386,6 +387,7 @@ router.post("/", async (req, res) => {
     return res.status(500).json({ error: "Erro ao criar mesa." });
   }
 });
+
 
 router.get("/pesquisa/:termo", async (req, res) => {
   const { termo } = req.params;
