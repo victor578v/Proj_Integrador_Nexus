@@ -121,6 +121,11 @@ nav {
     font-size: 0.8vw;
 }
 
+#mesas-usuario {
+    width: 8vw;
+    
+}
+
 .usuario-logado button:hover {
     background-color: #118FD2;
     color: white;

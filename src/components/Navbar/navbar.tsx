@@ -185,6 +185,9 @@ export function Navbar() {
                         <button onClick={handleLogout} id="sair">
                             Sair
                         </button>
+                        <Link  href={`/usuario/${usuario.id}`}>
+                            <button id="mesas-usuario">Suas Mesas</button>
+                        </Link>
                     </div>
                 ) : (
                     <div className="login-cadastro">

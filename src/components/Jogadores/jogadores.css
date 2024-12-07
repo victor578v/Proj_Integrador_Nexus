@@ -1,30 +1,78 @@
 .personagens {
-    display: flex;
-    flex-direction: column;
-    border-bottom: #118FD2 2px solid;
-    padding: 0.5vw;
-    gap: 1vw;
+  display: flex;
+  flex-direction: column;
+  border-bottom: #118fd2 2px solid;
+  padding: 0.5vw;
+  gap: 1vw;
 }
 
 .personagens button {
-    border: none;
-    border-radius: 0.2vw;
-    padding: 0.4vw;
+  border: none;
+  border-radius: 0.2vw;
+  padding: 0.4vw;
 }
 
 .personagens button:hover {
-    background-color: #118FD2;
-    color: white;
-    cursor: pointer;
+  background-color: #118fd2;
+  color: white;
+  cursor: pointer;
 }
 
 .jogadores {
-    width: 100%;
-    border-bottom: #118FD2 2px solid;
-    padding: 1vw;
+  width: 100%;
+  border-bottom: #118fd2 2px solid;
+  padding: 1vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  min-height: 30vw;
+  overflow-y: scroll auto;
+}
+
+.customizado-modal {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin: auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.customizado-modal form {
     display: flex;
     flex-direction: column;
     gap: 1vw;
-    min-height: 30vw;
-    overflow-y: scroll auto;
+}
+
+.personagens-titulo h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.personagens-botao {
+    background-color: #118fd2;
+    border: none;
+    padding: 0.75vw;
+    border-radius: 0.4vw;
+    color: #fff;
+    font-size: 1vw;
+}
+
+.personagens-botao:hover {
+    cursor: pointer;
+}
+
+.jogadores-input {
+  display: flex;
+  font-size: 1vw;
+  flex-direction: column;
+  gap: 0.2vw;
+}
+
+.jogadores-input input, select {
+    border: black 1px solid;
+    border-radius: 0.4vw;
+    padding: 0.5vw;
+    font-size: 0.8vw;
 }

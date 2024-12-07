@@ -10,7 +10,7 @@ import { PersonagemI } from "@/utils/types/personagens";
 import Swal from "sweetalert2";
 import { toast } from "sonner";
 
-const Jogadores: React.FC<MesaIdI> = ({ mesaId }) => {
+const Jogadores = ({ mesaId, isDonoMesa }: { mesaId: number, isDonoMesa: boolean }) => {
     const [usuarios, setUsuarios] = useState<UsuarioI[]>([]);
     const { usuario } = useUsuarioStore();
     const [mesa, setMesa] = useState<MesaI | null>(null);
@@ -44,27 +44,6 @@ const Jogadores: React.FC<MesaIdI> = ({ mesaId }) => {
     useEffect(() => {
         getPersonagem();
     }, [mesaId, usuario]); // Reexecuta a função quando o mesaId ou usuario mudar
-
-    useEffect(() => {
-        async function buscaDadosMesa(idMesa: number) {
-            try {
-                const response = await fetch(
-                    `${process.env.NEXT_PUBLIC_URL_API}/mesas/mesa/${idMesa}`
-                );
-                if (response.status === 200) {
-                    const dados = await response.json();
-                    setMesa(dados); // Armazena os dados completos da mesa
-                }
-            } catch (error) {
-                console.error("Erro ao buscar dados da mesa:", error);
-            }
-        }
-
-        buscaDadosMesa(mesaId);
-    }, []); // Dependências vazias para executar apenas uma vez
-
-    const idUsuarioLocal = localStorage.getItem("client_key");
-    const isDonoMesa = mesa?.userId == Number(idUsuarioLocal);
 
     const getDadosUsuarios = async () => {
         if (!mesaId) return; // Se não houver mesaId, não faz nada
@@ -256,17 +235,16 @@ const Jogadores: React.FC<MesaIdI> = ({ mesaId }) => {
             </div>
             <div className="jogadores">{listaUsuarios}</div>
 
-            {/* Modal Adicionar */}
-            <Modal open={isAddModalOpen} onClose={() => setIsAddModalOpen(false)} center>
-                <h2>Adicionar Personagem</h2>
+            <Modal open={isAddModalOpen} showCloseIcon={false} onClose={() => setIsAddModalOpen(false)} center classNames={{ modal: 'customizado-modal' }}>
+                <h2 className="personagens-titulo">Adicionar Personagem</h2>
                 <form
                     onSubmit={(e) => {
                         e.preventDefault();
                         handleAddPersonagem();
-                        setIsAddModalOpen(false)
+                        setIsAddModalOpen(false);
                     }}
                 >
-                    <div>
+                    <div className="jogadores-input">
                         <label htmlFor="usuario">Usuário:</label>
                         <select
                             id="usuario"
@@ -279,7 +257,7 @@ const Jogadores: React.FC<MesaIdI> = ({ mesaId }) => {
                             {usuarioOptions}
                         </select>
                     </div>
-                    <div>
+                    <div className="jogadores-input">
                         <label htmlFor="nickname">Nome do Personagem:</label>
                         <input
                             id="nickname"
@@ -289,7 +267,7 @@ const Jogadores: React.FC<MesaIdI> = ({ mesaId }) => {
                             required
                         />
                     </div>
-                    <div>
+                    <div className="jogadores-input">
                         <label htmlFor="vidaMaxima">Vida Máxima:</label>
                         <input
                             id="vidaMaxima"
@@ -299,7 +277,7 @@ const Jogadores: React.FC<MesaIdI> = ({ mesaId }) => {
                             required
                         />
                     </div>
-                    <div>
+                    <div className="jogadores-input">
                         <label htmlFor="vidaAtual">Vida Atual:</label>
                         <input
                             id="vidaAtual"
@@ -309,7 +287,7 @@ const Jogadores: React.FC<MesaIdI> = ({ mesaId }) => {
                             required
                         />
                     </div>
-                    <div>
+                    <div className="jogadores-input">
                         <label htmlFor="imagemUrl">Url da Imagem:</label>
                         <input
                             id="imagemUrl"
@@ -319,21 +297,21 @@ const Jogadores: React.FC<MesaIdI> = ({ mesaId }) => {
                             required
                         />
                     </div>
-                    <button type="submit">Adicionar</button>
+                    <button className="personagens-botao" type="submit">Adicionar</button>
                 </form>
             </Modal>
 
-            {/* Modal Modificar */}
-            <Modal open={isEditModalOpen} onClose={() => setIsEditModalOpen(false)} center>
-                <h2>Modificar Personagem</h2>
+            {/* Modal Modificar Personagem */}
+            <Modal open={isEditModalOpen} showCloseIcon={false} onClose={() => setIsEditModalOpen(false)} center classNames={{ modal: 'customizado-modal' }}>
+                <h2 className="personagens-titulo">Modificar Personagem</h2>
                 <form
                     onSubmit={(e) => {
                         e.preventDefault();
                         handleEditPersonagem();
-                        setIsAddModalOpen(false)
+                        setIsEditModalOpen(false);
                     }}
                 >
-                    <div>
+                    <div className="jogadores-input">
                         <label htmlFor="nickname">Nome do Personagem:</label>
                         <input
                             id="nickname"
@@ -343,7 +321,7 @@ const Jogadores: React.FC<MesaIdI> = ({ mesaId }) => {
                             required
                         />
                     </div>
-                    <div>
+                    <div className="jogadores-input">
                         <label htmlFor="vidaMaxima">Vida Máxima:</label>
                         <input
                             id="vidaMaxima"
@@ -353,7 +331,7 @@ const Jogadores: React.FC<MesaIdI> = ({ mesaId }) => {
                             required
                         />
                     </div>
-                    <div>
+                    <div className="jogadores-input">
                         <label htmlFor="vidaAtual">Vida Atual:</label>
                         <input
                             id="vidaAtual"
@@ -363,7 +341,7 @@ const Jogadores: React.FC<MesaIdI> = ({ mesaId }) => {
                             required
                         />
                     </div>
-                    <div>
+                    <div className="jogadores-input">
                         <label htmlFor="imagemUrl">Url da Imagem:</label>
                         <input
                             id="imagemUrl"
@@ -372,30 +350,27 @@ const Jogadores: React.FC<MesaIdI> = ({ mesaId }) => {
                             onChange={(e) => setimagemUrl(e.target.value)}
                             required
                         />
-                    </div>
-                    <button type="submit">
-                        Modificar
-                    </button>
+                    </div >
+                    <button className="personagens-botao" type="submit">Modificar</button>
                 </form>
-
             </Modal>
 
-            {/* Modal Excluir */}
-            <Modal open={isDeleteModalOpen} onClose={() => setIsDeleteModalOpen(false)} center>
-                <h2>Excluir Personagem</h2>
-                <select
-                    id="usuario"
-                    value={selectedUserId || ""}
-                    onChange={(e) => setSelectedUserId(Number(e.target.value))}
-                >
-                    <option value="" disabled>
-                        Selecione um usuário
-                    </option>
-                    {usuarioOptions}
-                </select>
-                <button type="button" onClick={handleDeletePersonagem}>
-                    Excluir
-                </button>
+            {/* Modal Excluir Personagem */}
+            <Modal open={isDeleteModalOpen} showCloseIcon={false} onClose={() => setIsDeleteModalOpen(false)} center classNames={{ modal: 'customizado-modal' }}>
+                <form action="">
+                    <div className="jogadores-input">
+                        <h2 className="personagens-titulo">Excluir Personagem</h2>
+                        <select
+                            id="usuario"
+                            value={selectedUserId || ""}
+                            onChange={(e) => setSelectedUserId(Number(e.target.value))}
+                        >
+                            <option value="" disabled>Selecione um usuário</option>
+                            {usuarioOptions}
+                        </select>
+                    </div>
+                    <button type="button" className="personagens-botao" onClick={handleDeletePersonagem}>Excluir</button>
+                </form>
             </Modal>
         </div>
     );

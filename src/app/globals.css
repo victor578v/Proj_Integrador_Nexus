@@ -36,3 +36,8 @@ button {
 label {
     font-size: 1vw;
 }
+
+
+.invisivel {
+    visibility: hidden;
+}

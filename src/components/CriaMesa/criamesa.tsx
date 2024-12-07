@@ -46,6 +46,7 @@ const CriaMesa = () => {
             vagas,
             userId: usuario.id,
             imagemUrl: imagem,
+            senha
         };
 
         try {

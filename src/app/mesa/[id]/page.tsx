@@ -1,17 +1,18 @@
-"use client"
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'next/navigation';
-import './page.css';
-import Biblioteca from '@/components/Biblioteca/biblioteca';
-import Chat from '@/components/Chat/chat';
-import Jogadores from '@/components/Jogadores/jogadores';
-import Sidebar from '@/components/Sidebar/sidebar';
+"use client";
+import React, { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
+import "./page.css";
+import Biblioteca from "@/components/Biblioteca/biblioteca";
+import Chat from "@/components/Chat/chat";
+import Jogadores from "@/components/Jogadores/jogadores";
+import Sidebar from "@/components/Sidebar/sidebar";
 
 const Mesa = () => {
     const { id: mesaId } = useParams();
     const [idUsuarioLocal, setIdUsuarioLocal] = useState<string | null>(null);
-    const [refreshKey, setRefreshKey] = useState(0); // Para forçar a atualização de Jogadores
-    const [isUserAdded, setIsUserAdded] = useState(false); // Estado para controlar se o usuário já foi adicionado
+    const [refreshKey, setRefreshKey] = useState(0);
+    const [isUserAdded, setIsUserAdded] = useState(false);
+    const [isDonoMesa, setIsDonoMesa] = useState<boolean>(false); // Estado para verificar se é dono da mesa
 
     useEffect(() => {
         const id = localStorage.getItem("client_key");
@@ -22,24 +23,27 @@ const Mesa = () => {
 
     useEffect(() => {
         const adicionarUsuarioNaMesa = async () => {
-            if (!idUsuarioLocal || isUserAdded) return; // Certifique-se de que `idUsuarioLocal` está definido e o usuário ainda não foi adicionado
+            if (!idUsuarioLocal || isUserAdded) return;
 
             try {
-                const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/mesas/${mesaId}/usuarios/${idUsuarioLocal}`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                });
+                const response = await fetch(
+                    `${process.env.NEXT_PUBLIC_URL_API}/mesas/${mesaId}/usuarios/${idUsuarioLocal}`,
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                    }
+                );
 
                 if (response.ok) {
-                    setIsUserAdded(true); // Marque que o usuário foi adicionado
-                    setRefreshKey(prevKey => prevKey + 1); // Força a atualização da lista de jogadores
+                    setIsUserAdded(true);
+                    setRefreshKey((prevKey) => prevKey + 1);
                 } else {
-                    console.error('Erro ao adicionar usuário à mesa');
+                    console.error("Erro ao adicionar usuário à mesa");
                 }
             } catch (error) {
-                console.error('Erro na requisição para adicionar usuário à mesa', error);
+                console.error("Erro na requisição para adicionar usuário à mesa", error);
             }
         };
 
@@ -48,25 +52,26 @@ const Mesa = () => {
         }
     }, [mesaId, idUsuarioLocal, isUserAdded]);
 
-    
-
     useEffect(() => {
         const removerUsuarioDaMesa = async () => {
             if (!idUsuarioLocal) return;
 
             try {
-                const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/mesas/${mesaId}/usuarios/${idUsuarioLocal}`, {
-                    method: 'DELETE',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                });
+                const response = await fetch(
+                    `${process.env.NEXT_PUBLIC_URL_API}/mesas/${mesaId}/usuarios/${idUsuarioLocal}`,
+                    {
+                        method: "DELETE",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                    }
+                );
 
                 if (!response.ok) {
-                    console.error('Erro ao remover usuário da mesa');
+                    console.error("Erro ao remover usuário da mesa");
                 }
             } catch (error) {
-                console.error('Erro na requisição para remover usuário da mesa', error);
+                console.error("Erro na requisição para remover usuário da mesa", error);
             }
         };
 
@@ -74,22 +79,41 @@ const Mesa = () => {
             removerUsuarioDaMesa();
         };
 
-        window.addEventListener('beforeunload', handleBeforeUnload);
+        window.addEventListener("beforeunload", handleBeforeUnload);
 
-        // Cleanup
         return () => {
-            window.removeEventListener('beforeunload', handleBeforeUnload);
+            window.removeEventListener("beforeunload", handleBeforeUnload);
             removerUsuarioDaMesa();
         };
+    }, [mesaId, idUsuarioLocal]);
+
+    useEffect(() => {
+        const buscaDadosMesa = async (idMesa: number) => {
+            try {
+                const response = await fetch(
+                    `${process.env.NEXT_PUBLIC_URL_API}/mesas/mesa/${idMesa}`
+                );
+                if (response.status === 200) {
+                    const dados = await response.json();
+                    setIsDonoMesa(dados.userId === Number(idUsuarioLocal)); // Verifica se o usuário é o dono da mesa
+                }
+            } catch (error) {
+                console.error("Erro ao buscar dados da mesa:", error);
+            }
+        };
+
+        if (mesaId && idUsuarioLocal) {
+            buscaDadosMesa(Number(mesaId));
+        }
     }, [mesaId, idUsuarioLocal]);
 
     return (
         <main>
             <Sidebar>
-                <Jogadores mesaId={Number(mesaId)} key={refreshKey} />
-                <Biblioteca />
+                <Jogadores mesaId={Number(mesaId)} key={refreshKey} isDonoMesa={isDonoMesa} />
+                <Biblioteca mesaId={Number(mesaId)} isDonoMesa={isDonoMesa} />
             </Sidebar>
-            <Chat mesaId={Number(mesaId)}/>
+            <Chat mesaId={Number(mesaId)} />
         </main>
     );
 };

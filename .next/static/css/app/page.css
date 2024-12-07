@@ -364,107 +364,160 @@
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/components/ItemMesa/itemmesa.css ***!
   \**********************************************************************************************************************************************************************************************************************************************************************************/
 .card {
-    background-color: #242038;
-    border-radius: 0.3vw;
-    color: white;
-    width: 20%;
-    height: 15vw;
-    display: flex;
-    flex-direction: column;
-    border: 2px solid #D9D9D9;
+  background-color: #242038;
+  border-radius: 0.3vw;
+  color: white;
+  width: 20%;
+  height: 15vw;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1vw;
+  border: 2px solid #d9d9d9;
 }
 
 .card:hover {
-    border: 2px solid #118FD2;
+  border: 2px solid #118fd2;
 }
 
 #div1 {
-    display: flex;
-    gap: 1vw;
-    margin: 0.5vw;
+  display: flex;
+  gap: 1vw;
+  margin: 0.5vw;
 }
 
 #div1 img {
-    min-width: 30%;
-    max-width: 30%;
-    min-height: 4vw;
-    max-height: 4vw;
-    border: none;
-    border-radius: 0.4vw;
+  min-width: 30%;
+  max-width: 30%;
+  min-height: 5.5vw;
+  max-height: 5.5vw;
+  border: none;
+  border-radius: 0.4vw;
 }
 
 .invisivel {
-    visibility: hidden; /* Torna o elemento invisível */
-    height: 0;          /* Remove o impacto visual do espaço */
-    margin: 0;          /* Elimina margens associadas */
-    padding: 0;         /* Remove preenchimentos */
+  visibility: hidden; /* Torna o elemento invisível */
+  height: 0; /* Remove o impacto visual do espaço */
+  margin: 0; /* Elimina margens associadas */
+  padding: 0; /* Remove preenchimentos */
 }
 
-
 #div2 {
-    display: flex;
-    flex-direction: column;
-    min-width: 65%;
-    max-width: 65%;
-    max-height: 4vw;
-    min-height: 4vw;
-       
+  display: flex;
+  flex-direction: column;
+  min-width: 65%;
+  max-width: 65%;
+  max-height: 5vw;
+  min-height: 5vw;
 }
 
 #div2 h2 {
-    display: flex;
-    align-items: center;
-    height: 3vw;
+  display: flex;
+  align-items: center;
+  height: 3vw;
 }
 
 #div2 h3 {
-    height: 2vw;
+  height: 2vw;
 }
 
 #div3 {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
 .card h4 {
-    height: 100%;
-    margin-left: 1vw;
+  height: 100%;
+  margin-left: 1vw;
 }
 
 #div3 h5 {
-    background-color: #1AB800;
-    border: none;
-    border-radius: 0.2vw;
-    margin-bottom: 0.5vw;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    height: 2vw;
-    padding: 0.8vw; 
-    width: 30%;
+  background-color: #1ab800;
+  border: none;
+  border-radius: 0.2vw;
+  margin-bottom: 0.5vw;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  height: 2vw;
+  padding: 0.8vw;
+  width: 30%;
 }
 
 #div3 button {
-    background-color: #118FD2;
-    border: none;
-    border-radius: 0.2vw;
-    padding: 0.8vw;
-    height: 2vw;
-    color: white;
-    display: flex;
-    text-align: center;
-    align-items: center;
+  background-color: #118fd2;
+  border: none;
+  border-radius: 0.2vw;
+  padding: 0.8vw;
+  height: 2vw;
+  color: white;
+  display: flex;
+  text-align: center;
+  align-items: center;
 }
 
 #div3 button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #div3 a {
-    text-decoration: none;
-    color: #D9D9D9;
-    font-weight: 500;
+  text-decoration: none;
+  color: #d9d9d9;
+  font-weight: 500;
 }
+
+.customizado-modal {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin: auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.senha-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 0.5vw;
+}
+
+.senha-titulo h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.senha-botao {
+  background-color: #118fd2;
+  border: none;
+  padding: 0.75vw;
+  border-radius: 0.4vw;
+  color: #fff;
+  font-size: 1vw;
+  width: 100%;
+}
+
+.senha-botao:hover {
+  cursor: pointer;
+}
+
+.senha-input {  
+  font-size: 1vw;
+  padding: 0.8vw;
+  border: 1px solid black;
+  border-radius: 0.4vw;
+  flex-direction: column;
+}
+
+.jogadores-input input,
+select {
+  border: black 1px solid;
+  border-radius: 0.4vw;
+  padding: 0.5vw;
+  font-size: 0.8vw;
+}
+
 /*!****************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/components/MesasRecomendadas/mesasrecomendadas.css ***!
   \****************************************************************************************************************************************************************************************************************************************************************************************************/

@@ -76,35 +76,6 @@
 .pesquisa button:hover {
     cursor: pointer;
 }
-
-.arquivo {
-    display: flex;
-    gap: 0.5vw;
-    align-items: center;
-    justify-content: baseline;
-}
-
-.arquivo:hover {
-    cursor: pointer;
-    color: #118FD2;
-}
-
-.arquivo img {
-    width: 1vw;
-}
-
-
-.arquivo h3 {
-    color: black;
-    font-size: 0.8vw;
-    font-weight: 400;
-}
-
-.arquivo h3:hover {
-    cursor: pointer;
-    color: #118FD2;
-}
-
 .arquivos {
     display: flex;
     flex-direction: column;

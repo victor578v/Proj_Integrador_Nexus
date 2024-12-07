@@ -1,0 +1,54 @@
+
+.lista-mesas-usuario {
+    background-color: white;
+    min-height: 35vw;
+}
+
+.lista-mesas-usuario h1 {
+    margin-top: 2vw;
+    margin-left: 6vw;
+}
+
+.mesas-lista {
+    margin-top: 1vw;
+    margin-left: 6vw;
+    margin-right: 6vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+.mesa-item {
+    display: flex;
+    gap: 2vw;
+    border: black 1px solid;
+    border-radius: 0.4vw;
+    padding: 1vw;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mesa-item h2 {
+    min-width: 15vw;
+    max-width: 15vw;
+    font-size: 0.9vw;
+}
+
+.mesa-item p {
+    min-width: 60vw;
+    max-width: 60vw;
+    font-size: 0.8vw;
+}
+
+.mesa-item button {
+    background-color: #118FD2;
+    border: none;
+    color: #ffff;
+    font-size: 1vw;
+    padding: 0.6vw;
+    border-radius: 0.4vw;
+}
+
+.mesa-item button {
+    cursor: pointer;
+}

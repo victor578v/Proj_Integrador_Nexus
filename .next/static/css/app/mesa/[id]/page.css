@@ -8,6 +8,221 @@ main {
 }
 
 
+/*!********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./node_modules/react-responsive-modal/styles.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************/
+.react-responsive-modal-root {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.react-responsive-modal-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.react-responsive-modal-container {
+  height: 100%;
+  outline: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: center;
+}
+
+/* Used to trick the browser to center the modal content properly  */
+.react-responsive-modal-containerCenter:after {
+  width: 0;
+  height: 100%;
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.react-responsive-modal-modal {
+  max-width: 800px;
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+  background: #ffffff;
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.25);
+  margin: 1.2rem;
+  padding: 1.2rem;
+  position: relative;
+  overflow-y: auto;
+}
+
+.react-responsive-modal-closeButton {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background-color: transparent;
+  display: flex;
+}
+
+/* Used to fix a screen glitch issues with the animation see https://github.com/pradel/react-responsive-modal/issues/495 */
+.react-responsive-modal-overlay,
+.react-responsive-modal-container,
+.react-responsive-modal-modal {
+  animation-fill-mode: forwards !important;
+}
+
+@keyframes react-responsive-modal-overlay-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes react-responsive-modal-overlay-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes react-responsive-modal-modal-in {
+  0% {
+    transform: scale(0.96);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(100%);
+    opacity: 1;
+  }
+}
+
+@keyframes react-responsive-modal-modal-out {
+  0% {
+    transform: scale(100%);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.96);
+    opacity: 0;
+  }
+}
+
+/*!****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/components/ItemArquivo/itemarquivo.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************/
+
+.arquivo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.arquivo button {
+    border: none;
+    background-color: #d9d9d9;
+}
+
+.arquivo button:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.arquivo-inside:hover {
+    cursor: pointer;
+    color: #118FD2;
+}
+
+.arquivo-inside img {
+    width: 1vw;
+}
+
+.arquivo-inside h3 {
+    color: black;
+    font-size: 0.8vw;
+    font-weight: 400;
+}
+
+.arquivo-inside h3:hover {
+    cursor: pointer;
+    color: #118FD2;
+}
+
+.arquivo-inside {
+    display: flex;
+    gap: 0.5vw;
+}
+
+
+
+.arquivo-modal {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.3s ease;
+}
+
+/* Título do modal */
+.arquivo-modal-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Estilo do textarea */
+.arquivo-modal-textarea {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+}
+
+.arquivo-modal-textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Estilo do conteúdo quando não for dono da mesa */
+.arquivo-modal-content {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Mensagem de aviso */
+.arquivo-modal-message {
+    color: #888;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Animação de fade-in para o modal */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 /*!**************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/components/Biblioteca/biblioteca.css ***!
   \**************************************************************************************************************************************************************************************************************************************************************************************/
@@ -89,35 +304,6 @@ main {
 .pesquisa button:hover {
     cursor: pointer;
 }
-
-.arquivo {
-    display: flex;
-    gap: 0.5vw;
-    align-items: center;
-    justify-content: baseline;
-}
-
-.arquivo:hover {
-    cursor: pointer;
-    color: #118FD2;
-}
-
-.arquivo img {
-    width: 1vw;
-}
-
-
-.arquivo h3 {
-    color: black;
-    font-size: 0.8vw;
-    font-weight: 400;
-}
-
-.arquivo h3:hover {
-    cursor: pointer;
-    color: #118FD2;
-}
-
 .arquivos {
     display: flex;
     flex-direction: column;
@@ -240,6 +426,17 @@ main {
     word-wrap: break-word; /* Permite quebrar palavras longas se necessário */
 }
 
+.btn-deletar {
+    font-size: 1vw;
+    margin-left: 1.5vw;
+    border: none;
+}
+
+.btn-deletar:hover {
+    cursor: pointer;
+    color: red;
+}
+
 .identificadores {
     display: flex;
     border-top: 2px black solid;
@@ -259,35 +456,84 @@ main {
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/components/Jogadores/jogadores.css ***!
   \************************************************************************************************************************************************************************************************************************************************************************************/
 .personagens {
-    display: flex;
-    flex-direction: column;
-    border-bottom: #118FD2 2px solid;
-    padding: 0.5vw;
-    gap: 1vw;
+  display: flex;
+  flex-direction: column;
+  border-bottom: #118fd2 2px solid;
+  padding: 0.5vw;
+  gap: 1vw;
 }
 
 .personagens button {
-    border: none;
-    border-radius: 0.2vw;
-    padding: 0.4vw;
+  border: none;
+  border-radius: 0.2vw;
+  padding: 0.4vw;
 }
 
 .personagens button:hover {
-    background-color: #118FD2;
-    color: white;
-    cursor: pointer;
+  background-color: #118fd2;
+  color: white;
+  cursor: pointer;
 }
 
 .jogadores {
-    width: 100%;
-    border-bottom: #118FD2 2px solid;
-    padding: 1vw;
+  width: 100%;
+  border-bottom: #118fd2 2px solid;
+  padding: 1vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  min-height: 30vw;
+  overflow-y: scroll auto;
+}
+
+.customizado-modal {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin: auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.customizado-modal form {
     display: flex;
     flex-direction: column;
     gap: 1vw;
-    min-height: 30vw;
-    overflow-y: scroll auto;
 }
+
+.personagens-titulo h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.personagens-botao {
+    background-color: #118fd2;
+    border: none;
+    padding: 0.75vw;
+    border-radius: 0.4vw;
+    color: #fff;
+    font-size: 1vw;
+}
+
+.personagens-botao:hover {
+    cursor: pointer;
+}
+
+.jogadores-input {
+  display: flex;
+  font-size: 1vw;
+  flex-direction: column;
+  gap: 0.2vw;
+}
+
+.jogadores-input input, select {
+    border: black 1px solid;
+    border-radius: 0.4vw;
+    padding: 0.5vw;
+    font-size: 0.8vw;
+}
+
 /*!****************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/components/ItemJogador/itemjogador.css ***!
   \****************************************************************************************************************************************************************************************************************************************************************************************/

@@ -20,6 +20,17 @@
     word-wrap: break-word; /* Permite quebrar palavras longas se necessário */
 }
 
+.btn-deletar {
+    font-size: 1vw;
+    margin-left: 1.5vw;
+    border: none;
+}
+
+.btn-deletar:hover {
+    cursor: pointer;
+    color: red;
+}
+
 .identificadores {
     display: flex;
     border-top: 2px black solid;

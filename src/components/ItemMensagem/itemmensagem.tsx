@@ -59,7 +59,7 @@ export function ItemMensagem({ dataMensagem }: { dataMensagem: MensagemI; }) {
         <h3>{dataMensagem.autor.nome === "sistema" ? "" : dataMensagem.autor.nome}</h3>
         {usuario.id === dataMensagem.userId && (
           <button className="btn-deletar" onClick={deletarMensagem}>
-            🗑️ Deletar
+            <i className="bi bi-trash-fill"></i>
           </button>
         )}
       </div>
