@@ -11,9 +11,12 @@ const Biblioteca = ({ mesaId, isDonoMesa }: { mesaId: number, isDonoMesa: boolea
     const [nome, setNome] = useState<string>("");
     const [modalAberto, setModalAberto] = useState<boolean>(false);
     const [pesquisa, setPesquisa] = useState<string>("");
-
     const getDadosArquivos = async () => {
-        fetch(`${process.env.NEXT_PUBLIC_URL_API}/arquivos/mesas/${mesaId}/arquivos`)
+        fetch(`${process.env.NEXT_PUBLIC_URL_API}/arquivos/mesas/${mesaId}/arquivos`, {
+            headers: {
+                "ngrok-skip-browser-warning": "true", // Adiciona o cabeçalho para evitar o aviso do Ngrok
+            },
+        })
             .then((res) => res.json())
             .then((data: ArquivoI[]) => {
                 setArquivos(data);
@@ -21,6 +24,7 @@ const Biblioteca = ({ mesaId, isDonoMesa }: { mesaId: number, isDonoMesa: boolea
             })
             .catch((error) => console.error("Erro ao buscar arquivos:", error));
     };
+
 
     useEffect(() => {
         getDadosArquivos()
@@ -44,6 +48,7 @@ const Biblioteca = ({ mesaId, isDonoMesa }: { mesaId: number, isDonoMesa: boolea
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
+                    "ngrok-skip-browser-warning": "true",
                 },
                 body: JSON.stringify({ nome, conteudo: "" }),
             });
@@ -79,7 +84,7 @@ const Biblioteca = ({ mesaId, isDonoMesa }: { mesaId: number, isDonoMesa: boolea
     return (
         <div className="biblioteca">
             <div className="biblioteca-interior">
-            <div className="pesquisa">
+                <div className="pesquisa">
                     <form onSubmit={handleSubmit}>
                         <img src="/img/search.svg" alt="pesquisar" />
                         <input

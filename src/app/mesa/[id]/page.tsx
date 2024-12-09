@@ -32,6 +32,7 @@ const Mesa = () => {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
+                            "ngrok-skip-browser-warning": "true"
                         },
                     }
                 );
@@ -63,6 +64,7 @@ const Mesa = () => {
                         method: "DELETE",
                         headers: {
                             "Content-Type": "application/json",
+                            "ngrok-skip-browser-warning": "true"
                         },
                     }
                 );
@@ -91,7 +93,13 @@ const Mesa = () => {
         const buscaDadosMesa = async (idMesa: number) => {
             try {
                 const response = await fetch(
-                    `${process.env.NEXT_PUBLIC_URL_API}/mesas/mesa/${idMesa}`
+                    `${process.env.NEXT_PUBLIC_URL_API}/mesas/mesa/${idMesa}`,
+                    {
+                        headers: {
+                            'ngrok-skip-browser-warning': 'true',
+                            'Content-Type': 'application/json', // Certifique-se de incluir o Content-Type, se necessário
+                        }
+                    }
                 );
                 if (response.status === 200) {
                     const dados = await response.json();
@@ -101,6 +109,7 @@ const Mesa = () => {
                 console.error("Erro ao buscar dados da mesa:", error);
             }
         };
+
 
         if (mesaId && idUsuarioLocal) {
             buscaDadosMesa(Number(mesaId));

@@ -10,20 +10,25 @@ const MesasRecomendadas = () => {
   useEffect(() => {
     const getDadosMesas = async () => {
         try {
-          const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/mesas`);
-          const dados: MesaI[] = await response.json();
-          // Embaralhar e selecionar 5 mesas aleatórias
-          const mesasAleatorias = dados
-            .sort(() => Math.random() - 0.5) // Embaralha a lista
-            .slice(0, 5); // Seleciona as 5 primeiras
-          setMesasRecomendadas(mesasAleatorias);
+            const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/mesas`, {
+                headers: {
+                    "ngrok-skip-browser-warning": "true", // Cabeçalho para evitar o aviso do Ngrok
+                },
+            });
+            const dados: MesaI[] = await response.json();
+            // Embaralhar e selecionar 5 mesas aleatórias
+            const mesasAleatorias = dados
+                .sort(() => Math.random() - 0.5) // Embaralha a lista
+                .slice(0, 5); // Seleciona as 5 primeiras
+            setMesasRecomendadas(mesasAleatorias);
         } catch (error) {
-          console.error("Erro ao buscar mesas:", error);
+            console.error("Erro ao buscar mesas:", error);
         }
-      };
+    };
 
     getDadosMesas();
-  }, []); // Dependências vazias para executar apenas uma vez
+}, []); // Dependências vazias para executar apenas uma vez
+
 
   return (
     <div>

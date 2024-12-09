@@ -23,7 +23,12 @@ export function Navbar() {
         // Função para buscar o usuário logado
         async function buscaUsuario(idUsuario: string) {
             try {
-                const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/usuarios/${idUsuario}`);
+                const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/usuarios/${idUsuario}`, {
+                    headers: {
+                        "ngrok-skip-browser-warning": "true", // Cabeçalho para evitar o aviso do Ngrok
+                    },
+                });
+        
                 if (response.status === 200) {
                     const dados = await response.json();
                     logaUsuario(dados);
@@ -31,7 +36,7 @@ export function Navbar() {
             } catch (error) {
                 console.error("Erro ao buscar usuário:", error);
             }
-        }
+        }        
 
         const idUsuarioLocal = localStorage.getItem("client_key");
         if (idUsuarioLocal) {
@@ -41,14 +46,24 @@ export function Navbar() {
         // Função para buscar os dados da mesa
         async function buscaDadosMesa(idMesa: number) {
             try {
-                const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/mesas/mesa/${idMesa}`);
+                const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/mesas/mesa/${idMesa}`, {
+                    headers: {
+                        "ngrok-skip-browser-warning": "true", // Cabeçalho para evitar o aviso do Ngrok
+                    },
+                });
+        
                 if (response.status === 200) {
                     const dados = await response.json();
                     setMesa(dados); // Armazena os dados completos da mesa
                     setNomeMesa(dados.nome); // Armazena apenas o nome da mesa
-
+        
                     if (dados.imagemId) {
-                        const imagemResponse = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/imagens/imagem/${dados.imagemId}`);
+                        const imagemResponse = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/imagens/imagem/${dados.imagemId}`, {
+                            headers: {
+                                "ngrok-skip-browser-warning": "true", // Cabeçalho para evitar o aviso do Ngrok
+                            },
+                        });
+        
                         if (imagemResponse.status === 200) {
                             const imagemDados = await imagemResponse.json();
                             setImagemMesa(imagemDados); // Armazenando a imagem
@@ -58,9 +73,8 @@ export function Navbar() {
             } catch (error) {
                 console.error("Erro ao buscar dados da mesa:", error);
             }
-
-
         }
+        
 
         // Se estiver na página de mesa, busca o id da mesa na URL
         if (isMesaPage) {
@@ -118,6 +132,7 @@ export function Navbar() {
                     method: "PUT",
                     headers: {
                         "Content-Type": "application/json",
+                        "ngrok-skip-browser-warning": "true"
                     },
                     body: JSON.stringify(updatedImagem),
                 });
@@ -136,6 +151,7 @@ export function Navbar() {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
+                    "ngrok-skip-browser-warning": "true"
                 },
                 body: JSON.stringify(updatedMesa),
             });

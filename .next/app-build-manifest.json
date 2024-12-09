@@ -12,18 +12,6 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/mesa/[id]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/mesa/[id]/page.css",
-      "static/chunks/app/mesa/[id]/page.js"
-    ],
-    "/entrar/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/entrar/page.css",
-      "static/chunks/app/entrar/page.js"
-    ],
     "/pesquisa/[termo]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -35,6 +23,12 @@
       "static/chunks/main-app.js",
       "static/css/app/usuario/[id]/page.css",
       "static/chunks/app/usuario/[id]/page.js"
+    ],
+    "/mesa/[id]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/mesa/[id]/page.css",
+      "static/chunks/app/mesa/[id]/page.js"
     ]
   }
 }

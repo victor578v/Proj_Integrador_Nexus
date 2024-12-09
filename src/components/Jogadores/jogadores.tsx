@@ -30,7 +30,14 @@ const Jogadores = ({ mesaId, isDonoMesa }: { mesaId: number, isDonoMesa: boolean
 
     const getPersonagem = async () => {
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/personagens/mesa/${mesaId}/usuario/${usuario.id}`);
+            const response = await fetch(
+                `${process.env.NEXT_PUBLIC_URL_API}/personagens/mesa/${mesaId}/usuario/${usuario.id}`,
+                {
+                    headers: {
+                        "ngrok-skip-browser-warning": "true", // Cabeçalho para evitar o aviso do Ngrok
+                    },
+                }
+            );
             if (!response.ok) throw new Error('Erro ao buscar personagem');
 
             const dados: PersonagemI = await response.json();
@@ -41,6 +48,7 @@ const Jogadores = ({ mesaId, isDonoMesa }: { mesaId: number, isDonoMesa: boolean
         }
     };
 
+
     useEffect(() => {
         getPersonagem();
     }, [mesaId, usuario]); // Reexecuta a função quando o mesaId ou usuario mudar
@@ -50,7 +58,12 @@ const Jogadores = ({ mesaId, isDonoMesa }: { mesaId: number, isDonoMesa: boolean
 
         try {
             const response = await fetch(
-                `${process.env.NEXT_PUBLIC_URL_API}/mesas/${mesaId}/usuarios`
+                `${process.env.NEXT_PUBLIC_URL_API}/mesas/${mesaId}/usuarios`,
+                {
+                    headers: {
+                        "ngrok-skip-browser-warning": "true", // Cabeçalho para evitar o aviso do Ngrok
+                    },
+                }
             );
             if (!response.ok) throw new Error("Erro ao buscar usuários");
 
@@ -60,6 +73,7 @@ const Jogadores = ({ mesaId, isDonoMesa }: { mesaId: number, isDonoMesa: boolean
             console.error("Erro ao buscar usuários: ", error);
         }
     };
+
 
     useEffect(() => {
         getDadosUsuarios();
@@ -90,6 +104,7 @@ const Jogadores = ({ mesaId, isDonoMesa }: { mesaId: number, isDonoMesa: boolean
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
+                        "ngrok-skip-browser-warning": "true"
                     },
                     body: JSON.stringify({
                         nickname,
@@ -158,6 +173,7 @@ const Jogadores = ({ mesaId, isDonoMesa }: { mesaId: number, isDonoMesa: boolean
                     method: "PUT",
                     headers: {
                         "Content-Type": "application/json",
+                        "ngrok-skip-browser-warning": "true"
                     },
                     body: JSON.stringify({
                         nickname,
@@ -197,8 +213,12 @@ const Jogadores = ({ mesaId, isDonoMesa }: { mesaId: number, isDonoMesa: boolean
                 `${process.env.NEXT_PUBLIC_URL_API}/usuarios/excluir-personagem/${mesaId}/${selectedUserId}`,
                 {
                     method: "DELETE",
+                    headers: {
+                        "ngrok-skip-browser-warning": "true", // Cabeçalho para evitar o aviso do Ngrok
+                    },
                 }
             );
+
 
             if (!response.ok) {
                 throw new Error("Erro ao excluir personagem.");

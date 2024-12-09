@@ -24,8 +24,14 @@ export function ItemMensagem({ dataMensagem }: { dataMensagem: MensagemI; }) {
       try {
         const response = await fetch(
           `${process.env.NEXT_PUBLIC_URL_API}/mesas/${dataMensagem.id}/${usuario.id}`,
-          { method: "DELETE" }
+          {
+            method: "DELETE",
+            headers: {
+              "ngrok-skip-browser-warning": "true", // Cabeçalho para evitar o aviso do Ngrok
+            },
+          }
         );
+
 
         if (!response.ok) {
           throw new Error("Erro ao deletar a mensagem");
@@ -65,5 +71,5 @@ export function ItemMensagem({ dataMensagem }: { dataMensagem: MensagemI; }) {
       </div>
       <h1>{dataMensagem.conteudo}</h1>
     </div>
-  );  
+  );
 }

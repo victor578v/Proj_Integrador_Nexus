@@ -9,9 +9,14 @@ export function ItemJogador({ dataUsuarios, mesaId }: { dataUsuarios: UsuarioI; 
 
     const getPersonagem = async () => {
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/personagens/mesa/${mesaId}/usuario/${dataUsuarios.id}`);
+            const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/personagens/mesa/${mesaId}/usuario/${dataUsuarios.id}`, {
+                headers: {
+                    "ngrok-skip-browser-warning": "true", // Adiciona o cabeçalho para evitar o aviso do Ngrok
+                },
+            });
+    
             if (!response.ok) throw new Error('Erro ao buscar personagem');
-
+    
             const dados: PersonagemI = await response.json();
             setPersonagem(dados);
         } catch (error) {
@@ -19,6 +24,7 @@ export function ItemJogador({ dataUsuarios, mesaId }: { dataUsuarios: UsuarioI; 
             setPersonagem(null);  // Se houver erro, garantir que personagem seja null
         }
     };
+    
 
     useEffect(() => {
         getPersonagem();

@@ -16,7 +16,11 @@ const PesquisaPage = () => {
     useEffect(() => {
         if (termo) {
             // Chama a API de pesquisa passando o termo
-            fetch(`${process.env.NEXT_PUBLIC_URL_API}/mesas/pesquisa/${termo}`)
+            fetch(`${process.env.NEXT_PUBLIC_URL_API}/mesas/pesquisa/${termo}`, {
+                headers: {
+                    "ngrok-skip-browser-warning": "true", 
+                },
+            })
                 .then((response) => response.json())
                 .then((data) => setMesas(data))
                 .catch((error) => {
@@ -24,6 +28,7 @@ const PesquisaPage = () => {
                 });
         }
     }, [termo]); // Executa quando o termo mudar
+
 
     return (
         <section>

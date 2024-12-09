@@ -343,7 +343,7 @@ main {
     border-radius: 4px; /* Arredondar os cantos do input */
     font-size: 1vw; /* Tamanho da fonte do input */
     outline: none;
-    resize: none; /* Impede que o usuário redimensione o campo manualmente */
+    resize: vertical; /* Impede que o usuário redimensione o campo manualmente */
 }
 
 .enviar-mensagem textarea:focus {
@@ -374,7 +374,8 @@ main {
 
 .mensagens {
     width: 95%;
-    height: 51vw;
+    min-height: 35vw;
+    max-height: 35vw;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -482,8 +483,9 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1vw;
-  min-height: 30vw;
-  overflow-y: scroll auto;
+  min-height: 20vw;
+  max-height: 20vw;
+  overflow-y: auto;
 }
 
 .customizado-modal {

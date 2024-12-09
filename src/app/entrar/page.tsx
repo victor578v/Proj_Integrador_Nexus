@@ -19,6 +19,7 @@ export default function Entrar() {
         const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/usuarios/login`, {
             headers: {
                 "Content-Type": "application/json",
+                "ngrok-skip-browser-warning": "true"
             },
             method: "POST",
             body: JSON.stringify({ email: data.email, senha: data.senha }),

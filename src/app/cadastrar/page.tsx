@@ -18,6 +18,7 @@ export default function Cadastrar() {
         const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/usuarios/cadastro`, {
             headers: {
                 "Content-Type": "application/json",
+                "ngrok-skip-browser-warning": "true"
             },
             method: "POST",
             body: JSON.stringify(data),

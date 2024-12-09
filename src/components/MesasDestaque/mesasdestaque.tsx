@@ -11,13 +11,27 @@ const MesasDestaque = () => {
     // useEffect para executar apenas na montagem
     useEffect(() => {
         const getDados = async () => {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/mesas/destaque`);
-            const dados = await response.json();
-            setMesas(dados);
+            try {
+                const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/mesas/destaque`, {
+                    headers: {
+                        "ngrok-skip-browser-warning": "true", // Cabeçalho para evitar o aviso do Ngrok
+                    },
+                });
+    
+                if (!response.ok) {
+                    throw new Error('Erro ao buscar dados');
+                }
+    
+                const dados = await response.json();
+                setMesas(dados);
+            } catch (error) {
+                console.error("Erro ao buscar dados:", error);
+            }
         };
-
-        getDados()
+    
+        getDados();
     }, []); // Dependências vazias para executar apenas uma vez
+    
 
     const listaMesas = mesas.map(mesa => (
         <ItemMesa dataMesas={mesa} key={mesa.id} />

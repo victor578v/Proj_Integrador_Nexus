@@ -13,12 +13,17 @@ const Usuario = () => {
     useEffect(() => {
         const listarMesasDoUsuario = async () => {
             if (!usuarioId) return;
-
+    
             try {
                 const response = await fetch(
-                    `${process.env.NEXT_PUBLIC_URL_API}/usuarios/${usuarioId}/mesas` // Supondo que a rota forneça as mesas do usuário
+                    `${process.env.NEXT_PUBLIC_URL_API}/usuarios/${usuarioId}/mesas`,
+                    {
+                        headers: {
+                            "ngrok-skip-browser-warning": "true", // Adiciona o cabeçalho para evitar o aviso do Ngrok
+                        },
+                    }
                 );
-
+    
                 if (response.ok) {
                     const mesas = await response.json();
                     setMesas(mesas);
@@ -29,11 +34,11 @@ const Usuario = () => {
                 console.error("Erro na requisição para listar as mesas do usuário", error);
             }
         };
-
+    
         if (usuarioId) {
             listarMesasDoUsuario();
         }
-    }, [usuarioId]);
+    }, [usuarioId]);    
 
     return (
         <main className="lista-mesas-usuario">
